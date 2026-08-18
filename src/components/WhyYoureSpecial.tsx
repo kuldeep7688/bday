@@ -1,0 +1,27 @@
+import { motion } from 'framer-motion'
+import { reasonsILoveYou } from '../config/content'
+import TextCard from './TextCard'
+
+export default function WhyYoureSpecial() {
+  return (
+    <section className="py-20 sm:py-32 bg-gradient-to-b from-white via-pastel-lavender/20 to-white px-4">
+      <div className="max-w-3xl mx-auto">
+        <motion.h2
+          className="font-display text-3xl sm:text-4xl text-center text-soft-text mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          Why You&apos;re So Special ♥
+        </motion.h2>
+
+        <div className="space-y-8">
+          {reasonsILoveYou.map((reason, index) => (
+            <TextCard key={reason.title} {...reason} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
