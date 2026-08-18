@@ -72,15 +72,15 @@
     {
       "id": 4,
       "name": "Lock Screen Component",
-      "status": "pending",
-      "agent": null,
-      "completedAt": null,
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2025-08-17",
       "planRef": "lines 470-589",
       "files": ["src/components/LockScreen.tsx"],
       "description": "LockScreen with countdown timer (days/hours/minutes/seconds), glassmorphism card, 'Something special is coming...' pulsing text. Checks every second — when timer hits 0, fades out after 1.5s and calls onUnlock callback. Uses FloatingElements with hearts",
       "steps": [
-        { "step": 1, "description": "Create src/components/LockScreen.tsx with countdown timer and unlock transition", "status": "pending", "file": "src/components/LockScreen.tsx" },
-        { "step": 2, "description": "Commit", "status": "pending", "file": null }
+        { "step": 1, "description": "Create src/components/LockScreen.tsx with countdown timer and unlock transition", "status": "completed", "file": "src/components/LockScreen.tsx" },
+        { "step": 2, "description": "Commit", "status": "completed", "file": null }
       ]
     },
     {
@@ -161,11 +161,11 @@
   ],
   "summary": {
     "totalTasks": 11,
-    "completedTasks": 5,
+    "completedTasks": 6,
     "inProgressTasks": 0,
-    "pendingTasks": 6,
+    "pendingTasks": 5,
     "totalSteps": 32,
-    "completedSteps": 14,
-    "pendingSteps": 18
+    "completedSteps": 16,
+    "pendingSteps": 16
   }
 }
