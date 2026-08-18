@@ -44,15 +44,15 @@
     {
       "id": 2,
       "name": "Content Configuration",
-      "status": "pending",
-      "agent": null,
-      "completedAt": null,
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2025-08-17",
       "planRef": "lines 216-321",
       "files": ["src/config/content.ts"],
       "description": "Central content file — UNLOCK_DATE (2025-09-03), herName, heroSubtitle, reasonsILoveYou (4 cards), photos (4 with src/caption/message), timeline (6 entries with icon/title/date/description/photo)",
       "steps": [
-        { "step": 1, "description": "Create src/config/content.ts with all text, dates, and asset paths", "status": "pending", "file": "src/config/content.ts" },
-        { "step": 2, "description": "Commit", "status": "pending", "file": null }
+        { "step": 1, "description": "Create src/config/content.ts with all text, dates, and asset paths", "status": "completed", "file": "src/config/content.ts" },
+        { "step": 2, "description": "Commit", "status": "completed", "file": null }
       ]
     },
     {
@@ -161,11 +161,11 @@
   ],
   "summary": {
     "totalTasks": 11,
-    "completedTasks": 3,
+    "completedTasks": 4,
     "inProgressTasks": 0,
-    "pendingTasks": 8,
+    "pendingTasks": 7,
     "totalSteps": 32,
-    "completedSteps": 10,
-    "pendingSteps": 22
+    "completedSteps": 12,
+    "pendingSteps": 20
   }
 }
