@@ -100,16 +100,16 @@
     {
       "id": 6,
       "name": "Why You're Special Component",
-      "status": "pending",
-      "agent": null,
-      "completedAt": null,
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2025-08-17",
       "planRef": "lines 684-768",
       "files": ["src/components/TextCard.tsx", "src/components/WhyYoureSpecial.tsx"],
       "description": "TextCard component (scroll fade-in, title scale, heart reveal) + WhyYoureSpecial section rendering 4 cards from config with staggered delays. Lavender gradient background",
       "steps": [
-        { "step": 1, "description": "Create src/components/TextCard.tsx", "status": "pending", "file": "src/components/TextCard.tsx" },
-        { "step": 2, "description": "Create src/components/WhyYoureSpecial.tsx", "status": "pending", "file": "src/components/WhyYoureSpecial.tsx" },
-        { "step": 3, "description": "Commit", "status": "pending", "file": null }
+        { "step": 1, "description": "Create src/components/TextCard.tsx", "status": "completed", "file": "src/components/TextCard.tsx" },
+        { "step": 2, "description": "Create src/components/WhyYoureSpecial.tsx", "status": "completed", "file": "src/components/WhyYoureSpecial.tsx" },
+        { "step": 3, "description": "Commit", "status": "completed", "file": null }
       ]
     },
     {
@@ -161,11 +161,11 @@
   ],
   "summary": {
     "totalTasks": 11,
-    "completedTasks": 7,
+    "completedTasks": 8,
     "inProgressTasks": 0,
-    "pendingTasks": 4,
+    "pendingTasks": 3,
     "totalSteps": 32,
-    "completedSteps": 18,
-    "pendingSteps": 14
+    "completedSteps": 21,
+    "pendingSteps": 11
   }
 }
