@@ -1,6 +1,6 @@
 {
   "project": "Birthday Website",
-  "status": "in_progress",
+  "status": "completed",
   "targetDate": "2025-09-03",
   "lastUpdated": "2025-08-17",
   "planFile": "docs/superpowers/plans/2025-08-17-birthday-website-plan.md",
@@ -145,27 +145,27 @@
     {
       "id": 9,
       "name": "App Composition + Final Assembly",
-      "status": "pending",
-      "agent": null,
-      "completedAt": null,
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2025-08-17",
       "planRef": "lines 1046-1111",
       "files": ["src/App.tsx"],
       "description": "App.tsx composes LockScreen → Hero → WhyYoureSpecial → PhotoGallery → Timeline. LockScreen blocks content until unlock date, then fades in all sections with AnimatePresence. Includes dev server verify, npm run build, final commit",
       "steps": [
-        { "step": 1, "description": "Create src/App.tsx composing all sections with lock screen", "status": "pending", "file": "src/App.tsx" },
-        { "step": 2, "description": "Run npm run dev and verify everything works", "status": "pending", "file": null },
-        { "step": 3, "description": "Run npm run build and verify production bundle", "status": "pending", "file": null },
-        { "step": 4, "description": "Final commit", "status": "pending", "file": null }
+        { "step": 1, "description": "Create src/App.tsx composing all sections with lock screen", "status": "completed", "file": "src/App.tsx" },
+        { "step": 2, "description": "Run npm run dev and verify everything works", "status": "completed", "file": null },
+        { "step": 3, "description": "Run npm run build and verify production bundle", "status": "completed", "file": null },
+        { "step": 4, "description": "Final commit", "status": "completed", "file": null }
       ]
     }
   ],
   "summary": {
     "totalTasks": 11,
-    "completedTasks": 10,
+    "completedTasks": 11,
     "inProgressTasks": 0,
-    "pendingTasks": 1,
+    "pendingTasks": 0,
     "totalSteps": 32,
-    "completedSteps": 27,
-    "pendingSteps": 5
+    "completedSteps": 32,
+    "pendingSteps": 0
   }
 }
