@@ -5,6 +5,22 @@
   "lastUpdated": "2025-08-17",
   "tasks": [
     {
+      "id": 0,
+      "name": "Brainstorming & Design",
+      "status": "completed",
+      "agent": "opencode",
+      "files": ["docs/superpowers/specs/2025-08-17-birthday-website-design.md"],
+      "completedAt": "2025-08-17"
+    },
+    {
+      "id": 0.5,
+      "name": "Implementation Plan",
+      "status": "completed",
+      "agent": "opencode",
+      "files": ["docs/superpowers/plans/2025-08-17-birthday-website-plan.md"],
+      "completedAt": "2025-08-17"
+    },
+    {
       "id": 1,
       "name": "Project Scaffold",
       "status": "pending",
@@ -78,8 +94,8 @@
     }
   ],
   "summary": {
-    "total": 9,
-    "completed": 0,
+    "total": 11,
+    "completed": 2,
     "inProgress": 0,
     "pending": 9
   }
