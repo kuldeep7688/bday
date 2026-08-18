@@ -86,15 +86,15 @@
     {
       "id": 5,
       "name": "Hero Component",
-      "status": "pending",
-      "agent": null,
-      "completedAt": null,
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2025-08-17",
       "planRef": "lines 591-682",
       "files": ["src/components/Hero.tsx"],
       "description": "Hero section with staggered letter animation for 'Happy Birthday, [name]', subtitle fade-in, FloatingElements (hearts + sparkles), and bouncing scroll indicator arrow at bottom",
       "steps": [
-        { "step": 1, "description": "Create src/components/Hero.tsx with staggered text animation and scroll indicator", "status": "pending", "file": "src/components/Hero.tsx" },
-        { "step": 2, "description": "Commit", "status": "pending", "file": null }
+        { "step": 1, "description": "Create src/components/Hero.tsx with staggered text animation and scroll indicator", "status": "completed", "file": "src/components/Hero.tsx" },
+        { "step": 2, "description": "Commit", "status": "completed", "file": null }
       ]
     },
     {
@@ -161,11 +161,11 @@
   ],
   "summary": {
     "totalTasks": 11,
-    "completedTasks": 6,
+    "completedTasks": 7,
     "inProgressTasks": 0,
-    "pendingTasks": 5,
+    "pendingTasks": 4,
     "totalSteps": 32,
-    "completedSteps": 16,
-    "pendingSteps": 16
+    "completedSteps": 18,
+    "pendingSteps": 14
   }
 }
