@@ -1,0 +1,86 @@
+{
+  "project": "Birthday Website",
+  "status": "in_progress",
+  "targetDate": "2025-09-03",
+  "lastUpdated": "2025-08-17",
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Project Scaffold",
+      "status": "pending",
+      "agent": null,
+      "files": ["package.json", "tsconfig.json", "vite.config.ts", "tailwind.config.js", "postcss.config.js", "index.html", "src/main.tsx", "src/index.css"],
+      "completedAt": null
+    },
+    {
+      "id": 2,
+      "name": "Content Configuration",
+      "status": "pending",
+      "agent": null,
+      "files": ["src/config/content.ts"],
+      "completedAt": null
+    },
+    {
+      "id": 3,
+      "name": "Floating Elements Component",
+      "status": "pending",
+      "agent": null,
+      "files": ["src/components/FloatingElements.tsx"],
+      "completedAt": null
+    },
+    {
+      "id": 4,
+      "name": "Lock Screen Component",
+      "status": "pending",
+      "agent": null,
+      "files": ["src/components/LockScreen.tsx"],
+      "completedAt": null
+    },
+    {
+      "id": 5,
+      "name": "Hero Component",
+      "status": "pending",
+      "agent": null,
+      "files": ["src/components/Hero.tsx"],
+      "completedAt": null
+    },
+    {
+      "id": 6,
+      "name": "Why You're Special Component",
+      "status": "pending",
+      "agent": null,
+      "files": ["src/components/TextCard.tsx", "src/components/WhyYoureSpecial.tsx"],
+      "completedAt": null
+    },
+    {
+      "id": 7,
+      "name": "Photo Gallery Component",
+      "status": "pending",
+      "agent": null,
+      "files": ["src/components/PhotoCard.tsx", "src/components/PhotoGallery.tsx"],
+      "completedAt": null
+    },
+    {
+      "id": 8,
+      "name": "Timeline Component",
+      "status": "pending",
+      "agent": null,
+      "files": ["src/components/TimelineCard.tsx", "src/components/Timeline.tsx"],
+      "completedAt": null
+    },
+    {
+      "id": 9,
+      "name": "App Composition + Final Assembly",
+      "status": "pending",
+      "agent": null,
+      "files": ["src/App.tsx"],
+      "completedAt": null
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "completed": 0,
+    "inProgress": 0,
+    "pending": 9
+  }
+}
