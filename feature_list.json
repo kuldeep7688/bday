@@ -9,7 +9,6 @@
       "name": "Brainstorming & Design",
       "status": "completed",
       "agent": "opencode",
-      "files": ["docs/superpowers/specs/2025-08-17-birthday-website-design.md"],
       "completedAt": "2025-08-17"
     },
     {
@@ -17,7 +16,6 @@
       "name": "Implementation Plan",
       "status": "completed",
       "agent": "opencode",
-      "files": ["docs/superpowers/plans/2025-08-17-birthday-website-plan.md"],
       "completedAt": "2025-08-17"
     },
     {
@@ -25,78 +23,121 @@
       "name": "Project Scaffold",
       "status": "pending",
       "agent": null,
-      "files": ["package.json", "tsconfig.json", "vite.config.ts", "tailwind.config.js", "postcss.config.js", "index.html", "src/main.tsx", "src/index.css"],
-      "completedAt": null
+      "completedAt": null,
+      "steps": [
+        { "step": 1, "description": "Create package.json", "status": "pending", "file": "package.json" },
+        { "step": 2, "description": "Create tsconfig.json", "status": "pending", "file": "tsconfig.json" },
+        { "step": 3, "description": "Create vite.config.ts", "status": "pending", "file": "vite.config.ts" },
+        { "step": 4, "description": "Create tailwind.config.js", "status": "pending", "file": "tailwind.config.js" },
+        { "step": 5, "description": "Create postcss.config.js", "status": "pending", "file": "postcss.config.js" },
+        { "step": 6, "description": "Create index.html", "status": "pending", "file": "index.html" },
+        { "step": 7, "description": "Create src/main.tsx", "status": "pending", "file": "src/main.tsx" },
+        { "step": 8, "description": "Create src/index.css", "status": "pending", "file": "src/index.css" },
+        { "step": 9, "description": "Install dependencies and verify", "status": "pending", "file": null },
+        { "step": 10, "description": "Commit", "status": "pending", "file": null }
+      ]
     },
     {
       "id": 2,
       "name": "Content Configuration",
       "status": "pending",
       "agent": null,
-      "files": ["src/config/content.ts"],
-      "completedAt": null
+      "completedAt": null,
+      "steps": [
+        { "step": 1, "description": "Create src/config/content.ts with all text, dates, and asset paths", "status": "pending", "file": "src/config/content.ts" },
+        { "step": 2, "description": "Commit", "status": "pending", "file": null }
+      ]
     },
     {
       "id": 3,
       "name": "Floating Elements Component",
       "status": "pending",
       "agent": null,
-      "files": ["src/components/FloatingElements.tsx"],
-      "completedAt": null
+      "completedAt": null,
+      "steps": [
+        { "step": 1, "description": "Create src/components/FloatingElements.tsx with FloatingHeart, FloatingSparkle, FloatingCloud", "status": "pending", "file": "src/components/FloatingElements.tsx" },
+        { "step": 2, "description": "Commit", "status": "pending", "file": null }
+      ]
     },
     {
       "id": 4,
       "name": "Lock Screen Component",
       "status": "pending",
       "agent": null,
-      "files": ["src/components/LockScreen.tsx"],
-      "completedAt": null
+      "completedAt": null,
+      "steps": [
+        { "step": 1, "description": "Create src/components/LockScreen.tsx with countdown timer and unlock transition", "status": "pending", "file": "src/components/LockScreen.tsx" },
+        { "step": 2, "description": "Commit", "status": "pending", "file": null }
+      ]
     },
     {
       "id": 5,
       "name": "Hero Component",
       "status": "pending",
       "agent": null,
-      "files": ["src/components/Hero.tsx"],
-      "completedAt": null
+      "completedAt": null,
+      "steps": [
+        { "step": 1, "description": "Create src/components/Hero.tsx with staggered text animation and scroll indicator", "status": "pending", "file": "src/components/Hero.tsx" },
+        { "step": 2, "description": "Commit", "status": "pending", "file": null }
+      ]
     },
     {
       "id": 6,
       "name": "Why You're Special Component",
       "status": "pending",
       "agent": null,
-      "files": ["src/components/TextCard.tsx", "src/components/WhyYoureSpecial.tsx"],
-      "completedAt": null
+      "completedAt": null,
+      "steps": [
+        { "step": 1, "description": "Create src/components/TextCard.tsx", "status": "pending", "file": "src/components/TextCard.tsx" },
+        { "step": 2, "description": "Create src/components/WhyYoureSpecial.tsx", "status": "pending", "file": "src/components/WhyYoureSpecial.tsx" },
+        { "step": 3, "description": "Commit", "status": "pending", "file": null }
+      ]
     },
     {
       "id": 7,
       "name": "Photo Gallery Component",
       "status": "pending",
       "agent": null,
-      "files": ["src/components/PhotoCard.tsx", "src/components/PhotoGallery.tsx"],
-      "completedAt": null
+      "completedAt": null,
+      "steps": [
+        { "step": 1, "description": "Create src/components/PhotoCard.tsx with polaroid frames and zoom overlay", "status": "pending", "file": "src/components/PhotoCard.tsx" },
+        { "step": 2, "description": "Create src/components/PhotoGallery.tsx", "status": "pending", "file": "src/components/PhotoGallery.tsx" },
+        { "step": 3, "description": "Commit", "status": "pending", "file": null }
+      ]
     },
     {
       "id": 8,
       "name": "Timeline Component",
       "status": "pending",
       "agent": null,
-      "files": ["src/components/TimelineCard.tsx", "src/components/Timeline.tsx"],
-      "completedAt": null
+      "completedAt": null,
+      "steps": [
+        { "step": 1, "description": "Create src/components/TimelineCard.tsx with slide-up reveal", "status": "pending", "file": "src/components/TimelineCard.tsx" },
+        { "step": 2, "description": "Create src/components/Timeline.tsx with icon landmarks and connecting line", "status": "pending", "file": "src/components/Timeline.tsx" },
+        { "step": 3, "description": "Commit", "status": "pending", "file": null }
+      ]
     },
     {
       "id": 9,
       "name": "App Composition + Final Assembly",
       "status": "pending",
       "agent": null,
-      "files": ["src/App.tsx"],
-      "completedAt": null
+      "completedAt": null,
+      "steps": [
+        { "step": 1, "description": "Create src/App.tsx composing all sections with lock screen", "status": "pending", "file": "src/App.tsx" },
+        { "step": 2, "description": "Run npm run dev and verify everything works", "status": "pending", "file": null },
+        { "step": 3, "description": "Run npm run build and verify production bundle", "status": "pending", "file": null },
+        { "step": 4, "description": "Final commit", "status": "pending", "file": null }
+      ]
     }
   ],
   "summary": {
-    "total": 11,
-    "completed": 2,
-    "inProgress": 0,
-    "pending": 9
+    "totalTasks": 11,
+    "completedTasks": 2,
+    "inProgressTasks": 0,
+    "pendingTasks": 9,
+    "totalSteps": 29,
+    "completedSteps": 0,
+    "pendingSteps": 29
   }
 }
