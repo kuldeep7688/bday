@@ -3,6 +3,7 @@
   "status": "in_progress",
   "targetDate": "2025-09-03",
   "lastUpdated": "2025-08-17",
+  "planFile": "docs/superpowers/plans/2025-08-17-birthday-website-plan.md",
   "tasks": [
     {
       "id": 0,
@@ -24,6 +25,9 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
+      "planRef": "lines 40-214",
+      "files": ["package.json", "tsconfig.json", "vite.config.ts", "tailwind.config.js", "postcss.config.js", "index.html", "src/main.tsx", "src/index.css"],
+      "description": "Create all project config files — package.json with React 19 + Framer Motion 12 + Vite 6 + Tailwind 3.4 dependencies, TypeScript strict config, Vite plugin, Tailwind with custom pastel colors, PostCSS, index.html with Google Fonts (Playfair Display + Inter), main.tsx entry point, index.css with Tailwind imports",
       "steps": [
         { "step": 1, "description": "Create package.json", "status": "pending", "file": "package.json" },
         { "step": 2, "description": "Create tsconfig.json", "status": "pending", "file": "tsconfig.json" },
@@ -43,6 +47,9 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
+      "planRef": "lines 216-321",
+      "files": ["src/config/content.ts"],
+      "description": "Central content file — UNLOCK_DATE (2025-09-03), herName, heroSubtitle, reasonsILoveYou (4 cards), photos (4 with src/caption/message), timeline (6 entries with icon/title/date/description/photo)",
       "steps": [
         { "step": 1, "description": "Create src/config/content.ts with all text, dates, and asset paths", "status": "pending", "file": "src/config/content.ts" },
         { "step": 2, "description": "Commit", "status": "pending", "file": null }
@@ -54,6 +61,9 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
+      "planRef": "lines 323-468",
+      "files": ["src/components/FloatingElements.tsx"],
+      "description": "FloatingElements component with 3 sub-components — FloatingHeart (y-axis float + rotation), FloatingSparkle (scale pulse), FloatingCloud (x-axis drift). 6 hearts, 5 sparkles, 3 clouds with staggered delays. Toggle via hearts/sparkles/clouds props",
       "steps": [
         { "step": 1, "description": "Create src/components/FloatingElements.tsx with FloatingHeart, FloatingSparkle, FloatingCloud", "status": "pending", "file": "src/components/FloatingElements.tsx" },
         { "step": 2, "description": "Commit", "status": "pending", "file": null }
@@ -65,6 +75,9 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
+      "planRef": "lines 470-589",
+      "files": ["src/components/LockScreen.tsx"],
+      "description": "LockScreen with countdown timer (days/hours/minutes/seconds), glassmorphism card, 'Something special is coming...' pulsing text. Checks every second — when timer hits 0, fades out after 1.5s and calls onUnlock callback. Uses FloatingElements with hearts",
       "steps": [
         { "step": 1, "description": "Create src/components/LockScreen.tsx with countdown timer and unlock transition", "status": "pending", "file": "src/components/LockScreen.tsx" },
         { "step": 2, "description": "Commit", "status": "pending", "file": null }
@@ -76,6 +89,9 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
+      "planRef": "lines 591-682",
+      "files": ["src/components/Hero.tsx"],
+      "description": "Hero section with staggered letter animation for 'Happy Birthday, [name]', subtitle fade-in, FloatingElements (hearts + sparkles), and bouncing scroll indicator arrow at bottom",
       "steps": [
         { "step": 1, "description": "Create src/components/Hero.tsx with staggered text animation and scroll indicator", "status": "pending", "file": "src/components/Hero.tsx" },
         { "step": 2, "description": "Commit", "status": "pending", "file": null }
@@ -87,6 +103,9 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
+      "planRef": "lines 684-768",
+      "files": ["src/components/TextCard.tsx", "src/components/WhyYoureSpecial.tsx"],
+      "description": "TextCard component (scroll fade-in, title scale, heart reveal) + WhyYoureSpecial section rendering 4 cards from config with staggered delays. Lavender gradient background",
       "steps": [
         { "step": 1, "description": "Create src/components/TextCard.tsx", "status": "pending", "file": "src/components/TextCard.tsx" },
         { "step": 2, "description": "Create src/components/WhyYoureSpecial.tsx", "status": "pending", "file": "src/components/WhyYoureSpecial.tsx" },
@@ -99,6 +118,9 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
+      "planRef": "lines 770-892",
+      "files": ["src/components/PhotoCard.tsx", "src/components/PhotoGallery.tsx"],
+      "description": "PhotoCard with polaroid-style white frame, hover tilt + scale animation, click to zoom overlay with sweet message. PhotoGallery renders 4 cards in flex-wrap layout with FloatingElements clouds in background",
       "steps": [
         { "step": 1, "description": "Create src/components/PhotoCard.tsx with polaroid frames and zoom overlay", "status": "pending", "file": "src/components/PhotoCard.tsx" },
         { "step": 2, "description": "Create src/components/PhotoGallery.tsx", "status": "pending", "file": "src/components/PhotoGallery.tsx" },
@@ -111,6 +133,9 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
+      "planRef": "lines 894-1044",
+      "files": ["src/components/TimelineCard.tsx", "src/components/Timeline.tsx"],
+      "description": "Horizontal timeline with 6 icon landmarks (💕☕🏠⚽📚📖), connecting line, scroll fade-in. Click any icon → TimelineCard slides up from bottom with photo, date, title, description. Spring animation on card reveal",
       "steps": [
         { "step": 1, "description": "Create src/components/TimelineCard.tsx with slide-up reveal", "status": "pending", "file": "src/components/TimelineCard.tsx" },
         { "step": 2, "description": "Create src/components/Timeline.tsx with icon landmarks and connecting line", "status": "pending", "file": "src/components/Timeline.tsx" },
@@ -123,6 +148,9 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
+      "planRef": "lines 1046-1111",
+      "files": ["src/App.tsx"],
+      "description": "App.tsx composes LockScreen → Hero → WhyYoureSpecial → PhotoGallery → Timeline. LockScreen blocks content until unlock date, then fades in all sections with AnimatePresence. Includes dev server verify, npm run build, final commit",
       "steps": [
         { "step": 1, "description": "Create src/App.tsx composing all sections with lock screen", "status": "pending", "file": "src/App.tsx" },
         { "step": 2, "description": "Run npm run dev and verify everything works", "status": "pending", "file": null },
@@ -136,8 +164,8 @@
     "completedTasks": 2,
     "inProgressTasks": 0,
     "pendingTasks": 9,
-    "totalSteps": 29,
+    "totalSteps": 32,
     "completedSteps": 0,
-    "pendingSteps": 29
+    "pendingSteps": 32
   }
 }
