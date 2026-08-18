@@ -130,16 +130,16 @@
     {
       "id": 8,
       "name": "Timeline Component",
-      "status": "pending",
-      "agent": null,
-      "completedAt": null,
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2025-08-17",
       "planRef": "lines 894-1044",
       "files": ["src/components/TimelineCard.tsx", "src/components/Timeline.tsx"],
       "description": "Horizontal timeline with 6 icon landmarks (💕☕🏠⚽📚📖), connecting line, scroll fade-in. Click any icon → TimelineCard slides up from bottom with photo, date, title, description. Spring animation on card reveal",
       "steps": [
-        { "step": 1, "description": "Create src/components/TimelineCard.tsx with slide-up reveal", "status": "pending", "file": "src/components/TimelineCard.tsx" },
-        { "step": 2, "description": "Create src/components/Timeline.tsx with icon landmarks and connecting line", "status": "pending", "file": "src/components/Timeline.tsx" },
-        { "step": 3, "description": "Commit", "status": "pending", "file": null }
+        { "step": 1, "description": "Create src/components/TimelineCard.tsx with slide-up reveal", "status": "completed", "file": "src/components/TimelineCard.tsx" },
+        { "step": 2, "description": "Create src/components/Timeline.tsx with icon landmarks and connecting line", "status": "completed", "file": "src/components/Timeline.tsx" },
+        { "step": 3, "description": "Commit", "status": "completed", "file": null }
       ]
     },
     {
@@ -161,11 +161,11 @@
   ],
   "summary": {
     "totalTasks": 11,
-    "completedTasks": 9,
+    "completedTasks": 10,
     "inProgressTasks": 0,
-    "pendingTasks": 2,
+    "pendingTasks": 1,
     "totalSteps": 32,
-    "completedSteps": 24,
-    "pendingSteps": 8
+    "completedSteps": 27,
+    "pendingSteps": 5
   }
 }
