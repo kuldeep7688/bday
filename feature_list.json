@@ -58,15 +58,15 @@
     {
       "id": 3,
       "name": "Floating Elements Component",
-      "status": "pending",
-      "agent": null,
-      "completedAt": null,
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2025-08-17",
       "planRef": "lines 323-468",
       "files": ["src/components/FloatingElements.tsx"],
       "description": "FloatingElements component with 3 sub-components — FloatingHeart (y-axis float + rotation), FloatingSparkle (scale pulse), FloatingCloud (x-axis drift). 6 hearts, 5 sparkles, 3 clouds with staggered delays. Toggle via hearts/sparkles/clouds props",
       "steps": [
-        { "step": 1, "description": "Create src/components/FloatingElements.tsx with FloatingHeart, FloatingSparkle, FloatingCloud", "status": "pending", "file": "src/components/FloatingElements.tsx" },
-        { "step": 2, "description": "Commit", "status": "pending", "file": null }
+        { "step": 1, "description": "Create src/components/FloatingElements.tsx with FloatingHeart, FloatingSparkle, FloatingCloud", "status": "completed", "file": "src/components/FloatingElements.tsx" },
+        { "step": 2, "description": "Commit", "status": "completed", "file": null }
       ]
     },
     {
@@ -161,11 +161,11 @@
   ],
   "summary": {
     "totalTasks": 11,
-    "completedTasks": 4,
+    "completedTasks": 5,
     "inProgressTasks": 0,
-    "pendingTasks": 7,
+    "pendingTasks": 6,
     "totalSteps": 32,
-    "completedSteps": 12,
-    "pendingSteps": 20
+    "completedSteps": 14,
+    "pendingSteps": 18
   }
 }
