@@ -41,11 +41,16 @@ npm run preview  # Preview production build
 - `compose:` - App assembly/integration
 
 ### Task Tracking
-Update `feature_list.json` after completing each task:
-1. Set task status to `"completed"`
+Implement one feature at a time — complete one task from `feature_list.json` before moving to the next.
+
+After completing each feature:
+1. Set task status to `"completed"` in `feature_list.json`
 2. Add agent name
-3. Add `completedAt` timestamp
-4. Update summary counts
+3. Add `completedAt` timestamp (YYYY-MM-DD)
+4. Update all step statuses within the task to `"completed"`
+5. Update summary counts (completedTasks, pendingTasks, completedSteps, pendingSteps)
+6. Commit the updated `feature_list.json` with message: `chore: mark task N complete - <task name>`
+7. Commit implementation changes with appropriate prefix (`add:`, `fix:`, `style:`, `compose:`)
 
 ## Component Guidelines
 - Each component is a single responsibility
@@ -62,6 +67,9 @@ Update `feature_list.json` after completing each task:
 - Manual testing via `npm run dev`
 - Verify: lock screen countdown, unlock transition, animations, responsive layout
 - Build must succeed with `npm run build` before marking task complete
+- For each component: verify props render correctly, animations trigger on scroll/click, no console errors
+- Test lock screen behavior: before unlock (content hidden), at unlock (smooth transition), after unlock (all sections visible)
+- Test responsive layout on mobile (320px), tablet (768px), desktop (1024px+)
 
 ## Deployment
 - Push to GitHub
