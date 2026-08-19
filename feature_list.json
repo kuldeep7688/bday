@@ -161,49 +161,49 @@
     {
       "id": 10,
       "name": "Confetti on Unlock",
-      "status": "pending",
-      "agent": null,
-      "completedAt": null,
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2026-08-18",
       "planRef": "docs/superpowers/plans/2026-08-18-birthday-cute-features.md",
       "files": ["package.json", "src/App.tsx"],
       "description": "Install canvas-confetti and trigger a 3-second confetti celebration with pastel colors when lock screen unlocks. Uses staggered bursts from left/right sides with pink, rose, lavender, white, and gold confetti",
       "steps": [
-        { "step": 1, "description": "Install canvas-confetti package", "status": "pending", "file": "package.json" },
-        { "step": 2, "description": "Add confetti trigger to handleUnlock in App.tsx", "status": "pending", "file": "src/App.tsx" },
-        { "step": 3, "description": "Verify confetti works on unlock", "status": "pending", "file": null },
-        { "step": 4, "description": "Commit", "status": "pending", "file": null }
+        { "step": 1, "description": "Install canvas-confetti package", "status": "completed", "file": "package.json" },
+        { "step": 2, "description": "Add confetti trigger to handleUnlock in App.tsx", "status": "completed", "file": "src/App.tsx" },
+        { "step": 3, "description": "Verify confetti works on unlock", "status": "completed", "file": null },
+        { "step": 4, "description": "Commit", "status": "completed", "file": null }
       ]
     },
     {
       "id": 11,
       "name": "Heart Cursor Trail",
-      "status": "pending",
-      "agent": null,
-      "completedAt": null,
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2026-08-18",
       "planRef": "docs/superpowers/plans/2026-08-18-birthday-cute-features.md",
       "files": ["src/components/HeartTrail.tsx", "src/App.tsx"],
       "description": "Create HeartTrail component that spawns hearts at cursor position on mouse move, creating a comet-tail effect. Hearts float upward and fade over 2 seconds. Rate-limited to 100ms between spawns, max 15 hearts. Hidden on mobile/touch devices",
       "steps": [
-        { "step": 1, "description": "Create HeartTrail.tsx component", "status": "pending", "file": "src/components/HeartTrail.tsx" },
-        { "step": 2, "description": "Import and render HeartTrail in App.tsx", "status": "pending", "file": "src/App.tsx" },
-        { "step": 3, "description": "Verify heart trail works", "status": "pending", "file": null },
-        { "step": 4, "description": "Commit", "status": "pending", "file": null }
+        { "step": 1, "description": "Create HeartTrail.tsx component", "status": "completed", "file": "src/components/HeartTrail.tsx" },
+        { "step": 2, "description": "Import and render HeartTrail in App.tsx", "status": "completed", "file": "src/App.tsx" },
+        { "step": 3, "description": "Verify heart trail works", "status": "completed", "file": null },
+        { "step": 4, "description": "Commit", "status": "completed", "file": null }
       ]
     },
     {
       "id": 12,
       "name": "Birthday Wish Finale Section",
-      "status": "pending",
-      "agent": null,
-      "completedAt": null,
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2026-08-18",
       "planRef": "docs/superpowers/plans/2026-08-18-birthday-cute-features.md",
       "files": ["src/components/BirthdayWish.tsx", "src/App.tsx"],
       "description": "Create final BirthdayWish section with input field, submit button, and paper airplane animation. On submit, airplane flies across screen with sparkle trail, then shows 'Your wish has been sent to the universe' message",
       "steps": [
-        { "step": 1, "description": "Create BirthdayWish.tsx component", "status": "pending", "file": "src/components/BirthdayWish.tsx" },
-        { "step": 2, "description": "Import and render BirthdayWish in App.tsx", "status": "pending", "file": "src/App.tsx" },
-        { "step": 3, "description": "Verify birthday wish section works", "status": "pending", "file": null },
-        { "step": 4, "description": "Commit", "status": "pending", "file": null }
+        { "step": 1, "description": "Create BirthdayWish.tsx component", "status": "completed", "file": "src/components/BirthdayWish.tsx" },
+        { "step": 2, "description": "Import and render BirthdayWish in App.tsx", "status": "completed", "file": "src/App.tsx" },
+        { "step": 3, "description": "Verify birthday wish section works", "status": "completed", "file": null },
+        { "step": 4, "description": "Commit", "status": "completed", "file": null }
       ]
     },
     {
@@ -225,11 +225,11 @@
   ],
   "summary": {
     "totalTasks": 15,
-    "completedTasks": 11,
+    "completedTasks": 14,
     "inProgressTasks": 0,
-    "pendingTasks": 4,
+    "pendingTasks": 1,
     "totalSteps": 48,
-    "completedSteps": 32,
-    "pendingSteps": 16
+    "completedSteps": 44,
+    "pendingSteps": 4
   }
 }
