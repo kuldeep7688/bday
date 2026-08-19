@@ -157,15 +157,79 @@
         { "step": 3, "description": "Run npm run build and verify production bundle", "status": "completed", "file": null },
         { "step": 4, "description": "Final commit", "status": "completed", "file": null }
       ]
+    },
+    {
+      "id": 10,
+      "name": "Confetti on Unlock",
+      "status": "pending",
+      "agent": null,
+      "completedAt": null,
+      "planRef": ".opencode/plans/2026-08-18-birthday-cute-features.md",
+      "files": ["package.json", "src/App.tsx"],
+      "description": "Install canvas-confetti and trigger a 3-second confetti celebration with pastel colors when lock screen unlocks. Uses staggered bursts from left/right sides with pink, rose, lavender, white, and gold confetti",
+      "steps": [
+        { "step": 1, "description": "Install canvas-confetti package", "status": "pending", "file": "package.json" },
+        { "step": 2, "description": "Add confetti trigger to handleUnlock in App.tsx", "status": "pending", "file": "src/App.tsx" },
+        { "step": 3, "description": "Verify confetti works on unlock", "status": "pending", "file": null },
+        { "step": 4, "description": "Commit", "status": "pending", "file": null }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Heart Cursor Trail",
+      "status": "pending",
+      "agent": null,
+      "completedAt": null,
+      "planRef": ".opencode/plans/2026-08-18-birthday-cute-features.md",
+      "files": ["src/components/HeartTrail.tsx", "src/App.tsx"],
+      "description": "Create HeartTrail component that spawns hearts at cursor position on mouse move, creating a comet-tail effect. Hearts float upward and fade over 2 seconds. Rate-limited to 100ms between spawns, max 15 hearts. Hidden on mobile/touch devices",
+      "steps": [
+        { "step": 1, "description": "Create HeartTrail.tsx component", "status": "pending", "file": "src/components/HeartTrail.tsx" },
+        { "step": 2, "description": "Import and render HeartTrail in App.tsx", "status": "pending", "file": "src/App.tsx" },
+        { "step": 3, "description": "Verify heart trail works", "status": "pending", "file": null },
+        { "step": 4, "description": "Commit", "status": "pending", "file": null }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Birthday Wish Finale Section",
+      "status": "pending",
+      "agent": null,
+      "completedAt": null,
+      "planRef": ".opencode/plans/2026-08-18-birthday-cute-features.md",
+      "files": ["src/components/BirthdayWish.tsx", "src/App.tsx"],
+      "description": "Create final BirthdayWish section with input field, submit button, and paper airplane animation. On submit, airplane flies across screen with sparkle trail, then shows 'Your wish has been sent to the universe' message",
+      "steps": [
+        { "step": 1, "description": "Create BirthdayWish.tsx component", "status": "pending", "file": "src/components/BirthdayWish.tsx" },
+        { "step": 2, "description": "Import and render BirthdayWish in App.tsx", "status": "pending", "file": "src/App.tsx" },
+        { "step": 3, "description": "Verify birthday wish section works", "status": "pending", "file": null },
+        { "step": 4, "description": "Commit", "status": "pending", "file": null }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Final Verification & Build",
+      "status": "pending",
+      "agent": null,
+      "completedAt": null,
+      "planRef": ".opencode/plans/2026-08-18-birthday-cute-features.md",
+      "files": [],
+      "description": "Run development server, test responsive design on mobile/tablet/desktop, verify production build succeeds with no errors",
+      "steps": [
+        { "step": 1, "description": "Run npm run dev and verify all features", "status": "pending", "file": null },
+        { "step": 2, "description": "Test responsive design", "status": "pending", "file": null },
+        { "step": 3, "description": "Run npm run build", "status": "pending", "file": null },
+        { "step": 4, "description": "Final commit", "status": "pending", "file": null }
+      ]
     }
   ],
   "summary": {
-    "totalTasks": 11,
+    "totalTasks": 15,
     "completedTasks": 11,
     "inProgressTasks": 0,
-    "pendingTasks": 0,
-    "totalSteps": 32,
+    "pendingTasks": 4,
+    "totalSteps": 48,
     "completedSteps": 32,
-    "pendingSteps": 0
+    "pendingSteps": 16
   }
 }
