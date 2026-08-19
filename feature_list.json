@@ -164,7 +164,7 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
-      "planRef": ".opencode/plans/2026-08-18-birthday-cute-features.md",
+      "planRef": "docs/superpowers/plans/2026-08-18-birthday-cute-features.md",
       "files": ["package.json", "src/App.tsx"],
       "description": "Install canvas-confetti and trigger a 3-second confetti celebration with pastel colors when lock screen unlocks. Uses staggered bursts from left/right sides with pink, rose, lavender, white, and gold confetti",
       "steps": [
@@ -180,7 +180,7 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
-      "planRef": ".opencode/plans/2026-08-18-birthday-cute-features.md",
+      "planRef": "docs/superpowers/plans/2026-08-18-birthday-cute-features.md",
       "files": ["src/components/HeartTrail.tsx", "src/App.tsx"],
       "description": "Create HeartTrail component that spawns hearts at cursor position on mouse move, creating a comet-tail effect. Hearts float upward and fade over 2 seconds. Rate-limited to 100ms between spawns, max 15 hearts. Hidden on mobile/touch devices",
       "steps": [
@@ -196,7 +196,7 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
-      "planRef": ".opencode/plans/2026-08-18-birthday-cute-features.md",
+      "planRef": "docs/superpowers/plans/2026-08-18-birthday-cute-features.md",
       "files": ["src/components/BirthdayWish.tsx", "src/App.tsx"],
       "description": "Create final BirthdayWish section with input field, submit button, and paper airplane animation. On submit, airplane flies across screen with sparkle trail, then shows 'Your wish has been sent to the universe' message",
       "steps": [
@@ -212,7 +212,7 @@
       "status": "pending",
       "agent": null,
       "completedAt": null,
-      "planRef": ".opencode/plans/2026-08-18-birthday-cute-features.md",
+      "planRef": "docs/superpowers/plans/2026-08-18-birthday-cute-features.md",
       "files": [],
       "description": "Run development server, test responsive design on mobile/tablet/desktop, verify production build succeeds with no errors",
       "steps": [
