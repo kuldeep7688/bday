@@ -8,6 +8,7 @@ import PhotoGallery from './components/PhotoGallery'
 import Timeline from './components/Timeline'
 import FloatingStickers from './components/FloatingStickers'
 import HeartTrail from './components/HeartTrail'
+import BirthdayWish from './components/BirthdayWish'
 
 export default function App() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -64,6 +65,7 @@ export default function App() {
             <WhyYoureSpecial />
             <PhotoGallery />
             <Timeline />
+            <BirthdayWish />
           </motion.main>
         )}
       </AnimatePresence>
