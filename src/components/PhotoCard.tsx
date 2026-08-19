@@ -30,7 +30,7 @@ export default function PhotoCard({ src, caption, message, index }: PhotoCardPro
           <img
             src={src}
             alt={caption}
-            className="w-48 h-48 sm:w-56 sm:h-56 object-cover rounded"
+            className="w-36 h-36 sm:w-44 sm:h-44 object-cover rounded"
           />
         </div>
         <p className="font-display text-sm text-soft-text/80 text-center mt-2 italic">

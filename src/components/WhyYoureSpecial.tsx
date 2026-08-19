@@ -16,7 +16,7 @@ export default function WhyYoureSpecial() {
           Why You&apos;re So Special ♥
         </motion.h2>
 
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {reasonsILoveYou.map((reason, index) => (
             <TextCard key={reason.title} {...reason} index={index} />
           ))}

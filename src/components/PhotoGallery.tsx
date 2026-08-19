@@ -19,7 +19,7 @@ export default function PhotoGallery() {
           The Most Beautiful Person I Know 🌸
         </motion.h2>
 
-        <div className="flex flex-wrap justify-center gap-8 sm:gap-12">
+        <div className="flex flex-nowrap justify-center gap-4 sm:gap-6">
           {photos.map((photo, index) => (
             <PhotoCard key={photo.src} {...photo} index={index} />
           ))}

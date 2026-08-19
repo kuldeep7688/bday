@@ -9,7 +9,7 @@ interface TextCardProps {
 export default function TextCard({ title, text, index }: TextCardProps) {
   return (
     <motion.div
-      className="max-w-md mx-auto bg-white/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg shadow-pastel-pink/10"
+      className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg shadow-pastel-pink/10 h-full"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
