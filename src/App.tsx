@@ -7,6 +7,7 @@ import WhyYoureSpecial from './components/WhyYoureSpecial'
 import PhotoGallery from './components/PhotoGallery'
 import Timeline from './components/Timeline'
 import FloatingStickers from './components/FloatingStickers'
+import HeartTrail from './components/HeartTrail'
 
 export default function App() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -57,6 +58,7 @@ export default function App() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
+            <HeartTrail />
             <FloatingStickers />
             <Hero />
             <WhyYoureSpecial />
