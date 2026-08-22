@@ -63,7 +63,7 @@ export default function BirthdayWish() {
         </motion.p>
 
         <AnimatePresence mode="wait">
-          {!isSubmitted ? (
+          {!(isSubmitted && !hasError) ? (
             <motion.div
               key="wish-form"
               initial={{ opacity: 1 }}
@@ -118,7 +118,7 @@ export default function BirthdayWish() {
               </motion.p>
             </motion.div>
           )}
-          {hasError && !isSubmitted && (
+          {hasError && !isFlying && (
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
