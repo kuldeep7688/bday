@@ -1,15 +1,36 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function BirthdayWish() {
   const [wish, setWish] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isFlying, setIsFlying] = useState(false)
+  const [hasError, setHasError] = useState(false)
 
-  const handleSubmit = () => {
+  useEffect(() => {
+    if (wish) setHasError(false)
+  }, [wish])
+
+  const handleSubmit = async () => {
     if (!wish.trim()) return
 
     setIsFlying(true)
+    setHasError(false)
+
+    try {
+      const response = await fetch('/api/wish', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ wish: wish.trim() }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send wish')
+      }
+    } catch (error) {
+      console.error('Failed to send wish:', error)
+      setHasError(true)
+    }
 
     setTimeout(() => {
       setIsFlying(false)
@@ -95,6 +116,15 @@ export default function BirthdayWish() {
                 Your wish has been sent to the universe ✨
               </motion.p>
             </motion.div>
+          )}
+          {hasError && !isSubmitted && (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-soft-text/60 text-sm mt-4"
+            >
+              Your wish couldn't fly right now. Please try again.
+            </motion.p>
           )}
         </AnimatePresence>
 
