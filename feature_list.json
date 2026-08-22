@@ -2,7 +2,7 @@
   "project": "Birthday Website",
   "status": "completed",
   "targetDate": "2025-09-03",
-  "lastUpdated": "2025-08-17",
+  "lastUpdated": "2026-08-22",
   "planFile": "docs/superpowers/plans/2025-08-17-birthday-website-plan.md",
   "tasks": [
     {
@@ -221,15 +221,32 @@
         { "step": 3, "description": "Run npm run build", "status": "completed", "file": null },
         { "step": 4, "description": "Final commit", "status": "completed", "file": null }
       ]
+    },
+    {
+      "id": 14,
+      "name": "Wish Persistence to Google Sheets",
+      "status": "completed",
+      "agent": "opencode",
+      "completedAt": "2026-08-22",
+      "planRef": "docs/superpowers/plans/2026-02-08-wish-persistence.md",
+      "files": ["package.json", "api/wish.ts", "src/components/BirthdayWish.tsx"],
+      "description": "Add Vercel serverless function at /api/wish that validates and appends wishes to a Google Sheet via googleapis. Update BirthdayWish component to POST wishes to the API with error handling and proper animation timing using Promise.all",
+      "steps": [
+        { "step": 1, "description": "Install googleapis and @vercel/node dependencies", "status": "completed", "file": "package.json" },
+        { "step": 2, "description": "Create api/wish.ts serverless function", "status": "completed", "file": "api/wish.ts" },
+        { "step": 3, "description": "Update BirthdayWish.tsx to POST to API", "status": "completed", "file": "src/components/BirthdayWish.tsx" },
+        { "step": 4, "description": "Verify build passes", "status": "completed", "file": null },
+        { "step": 5, "description": "Commit", "status": "completed", "file": null }
+      ]
     }
   ],
   "summary": {
-    "totalTasks": 15,
-    "completedTasks": 15,
+    "totalTasks": 16,
+    "completedTasks": 16,
     "inProgressTasks": 0,
     "pendingTasks": 0,
-    "totalSteps": 48,
-    "completedSteps": 48,
+    "totalSteps": 53,
+    "completedSteps": 53,
     "pendingSteps": 0
   }
 }
