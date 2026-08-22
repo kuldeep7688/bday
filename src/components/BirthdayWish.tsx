@@ -122,6 +122,7 @@ export default function BirthdayWish() {
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               className="text-soft-text/60 text-sm mt-4"
             >
               Your wish couldn't fly right now. Please try again.
