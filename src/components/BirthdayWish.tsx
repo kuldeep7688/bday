@@ -17,25 +17,26 @@ export default function BirthdayWish() {
     setIsFlying(true)
     setHasError(false)
 
-    try {
-      const response = await fetch('/api/wish', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ wish: wish.trim() }),
-      })
-
-      if (!response.ok) {
-        throw new Error('Failed to send wish')
-      }
-    } catch (error) {
-      console.error('Failed to send wish:', error)
+    const apiCall = fetch('/api/wish', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ wish: wish.trim() }),
+    }).then(r => {
+      if (!r.ok) throw new Error('Failed to send wish')
+    }).catch(err => {
+      console.error('Failed to send wish:', err)
       setHasError(true)
-    }
+    })
 
-    setTimeout(() => {
-      setIsFlying(false)
-      setIsSubmitted(true)
-    }, 2500)
+    const animation = new Promise<void>(resolve => {
+      setTimeout(() => {
+        setIsFlying(false)
+        resolve()
+      }, 2500)
+    })
+
+    await Promise.all([apiCall, animation])
+    setIsSubmitted(true)
   }
 
   return (
