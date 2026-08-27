@@ -1,0 +1,23 @@
+- generic [ref=f10e1]:
+  - generic: ♥
+  - generic: ♥
+  - generic: ♥
+  - generic: ♥
+  - generic: ♥
+  - generic: ♥
+  - generic [ref=f10e2]:
+    - paragraph [ref=f10e3]: Something special is coming...
+    - generic [ref=f10e4]:
+      - generic [ref=f10e5]:
+        - generic [ref=f10e6]: "00"
+        - generic [ref=f10e7]: Days
+      - generic [ref=f10e8]:
+        - generic [ref=f10e9]: "00"
+        - generic [ref=f10e10]: Hours
+      - generic [ref=f10e11]:
+        - generic [ref=f10e12]: "00"
+        - generic [ref=f10e13]: Minutes
+      - generic [ref=f10e14]:
+        - generic [ref=f10e15]: "00"
+        - generic [ref=f10e16]: Seconds
+    - paragraph [ref=f10e17]: September 3rd can't come soon enough ♥

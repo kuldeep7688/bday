@@ -65,28 +65,15 @@ export default function FloatingScratchCards() {
     const card = cardPositions.find((c) => c.id === id)
     if (!card) return
 
-    if (!revealedCards.has(id)) {
-      e.currentTarget.setPointerCapture(e.pointerId)
-      dragRef.current = {
-        id,
-        startX: e.clientX,
-        startY: e.clientY,
-        startCardX: card.x,
-        startCardY: card.y,
-        hasMoved: false,
-      }
-    } else {
-      e.currentTarget.setPointerCapture(e.pointerId)
-      dragRef.current = {
-        id,
-        startX: e.clientX,
-        startY: e.clientY,
-        startCardX: card.x,
-        startCardY: card.y,
-        hasMoved: false,
-      }
+    dragRef.current = {
+      id,
+      startX: e.clientX,
+      startY: e.clientY,
+      startCardX: card.x,
+      startCardY: card.y,
+      hasMoved: false,
     }
-  }, [cardPositions, revealedCards])
+  }, [cardPositions])
 
   const handlePointerMove = useCallback((e: React.PointerEvent) => {
     if (!dragRef.current) return
@@ -124,6 +111,12 @@ export default function FloatingScratchCards() {
     dragRef.current = null
   }, [revealedCards])
 
+  const handleCardClick = useCallback((id: string) => {
+    if (!revealedCards.has(id)) {
+      setActiveCard(id)
+    }
+  }, [revealedCards])
+
   const unrevealedCards = cardPositions.filter((card) => !revealedCards.has(card.id))
   const revealedMessages = cardPositions.filter((card) => revealedCards.has(card.id))
 
@@ -152,6 +145,7 @@ export default function FloatingScratchCards() {
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
             onPointerCancel={handlePointerUp}
+            onClick={() => handleCardClick(card.id)}
           >
             <ScratchCard
               width={180}
@@ -176,7 +170,7 @@ export default function FloatingScratchCards() {
       <AnimatePresence>
         {activeCard && (
           <motion.div
-            className="fixed inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-40"
+            className="fixed inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-40 pointer-events-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

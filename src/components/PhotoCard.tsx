@@ -29,7 +29,7 @@ export default function PhotoCard({ src, caption, message, index }: PhotoCardPro
     <>
       <motion.div
         ref={cardRef}
-        className="relative group cursor-pointer"
+        className="relative group cursor-pointer z-10"
         style={{
           transformStyle: 'preserve-3d',
           perspective: '1000px',

@@ -1,0 +1,157 @@
+- generic [ref=f10e19]:
+  - main [ref=f10e20]:
+    - generic: ♥
+    - generic:
+      - generic:
+        - img "Girl playing with hair"
+      - generic:
+        - img "Girl pouting"
+      - generic:
+        - img "Girl sitting on sofa with laptop"
+      - generic:
+        - img "Girl wearing black goggles"
+    - generic:
+      - generic [ref=f10e27] [cursor=pointer]
+      - generic [ref=f10e31] [cursor=pointer]
+      - generic [ref=f10e35] [cursor=pointer]
+      - paragraph [ref=f10e210]: You light up my world 💫
+    - generic [ref=f10e41]:
+      - generic: ♥
+      - generic: ♥
+      - generic: ♥
+      - generic: ♥
+      - generic: ♥
+      - generic: ♥
+      - generic: ✦
+      - generic: ✦
+      - generic: ✦
+      - generic: ✦
+      - generic: ✦
+      - generic: 🌸
+      - generic: 🌸
+      - generic: 🌸
+      - generic: 🌸
+      - generic: ✦
+      - generic: ✦
+      - generic: ✦
+      - generic: ✦
+      - generic [ref=f10e42]:
+        - paragraph [ref=f10e43]: A little something for you
+        - heading "H a p p y B i r t h d a y , A r c h i t a" [level=1] [ref=f10e44]:
+          - generic [ref=f10e45]:
+            - generic [ref=f10e46]: H
+            - generic [ref=f10e47]: a
+            - generic [ref=f10e48]: p
+            - generic [ref=f10e49]: p
+            - generic [ref=f10e50]: "y"
+            - generic [ref=f10e52]: B
+            - generic [ref=f10e53]: i
+            - generic [ref=f10e54]: r
+            - generic [ref=f10e55]: t
+            - generic [ref=f10e56]: h
+            - generic [ref=f10e57]: d
+            - generic [ref=f10e58]: a
+            - generic [ref=f10e59]: "y"
+            - generic [ref=f10e60]: ","
+            - generic [ref=f10e62]: A
+            - generic [ref=f10e63]: r
+            - generic [ref=f10e64]: c
+            - generic [ref=f10e65]: h
+            - generic [ref=f10e66]: i
+            - generic [ref=f10e67]: t
+            - generic [ref=f10e68]: a
+        - paragraph [ref=f10e69]: Today the world got a little brighter ✨
+      - generic [ref=f10e70] [cursor=pointer]
+    - generic [ref=f10e77]:
+      - heading "Why You're So Special ♥" [level=2] [ref=f10e78]
+      - generic [ref=f10e79]:
+        - generic [ref=f10e81]:
+          - heading "Your Smile" [level=3] [ref=f10e82]
+          - paragraph [ref=f10e83]: Some days just feel heavy, until you walk in and smile. Honestly,it shifts the whole energy of the room. Just like that, everything feels a little lighter, and the bad stuff doesn't matter as much.
+          - generic [ref=f10e84]: ♥
+        - generic [ref=f10e86]:
+          - heading "Your Energy" [level=3] [ref=f10e87]
+          - paragraph [ref=f10e88]: You have a way of making everything feel exciting. Your energy is just completely infectious, and honestly, it makes me want to jump into anything with you. Whether it's a crazy adventure or something totally random, I just know it's going to be better with you around.
+          - generic [ref=f10e89]: ♥
+        - generic [ref=f10e91]:
+          - heading "Your Kindness" [level=3] [ref=f10e92]
+          - paragraph [ref=f10e93]: You genuinely care about people in a way that's rare. Even when someone gives you a reason to hold a grudge, you still wish the best for them anyway. It takes a big heart to lead with that kind of grace, and it says everything about who you are.
+          - generic: ♥
+        - generic [ref=f10e95]:
+          - heading "How You Make Me Feel" [level=3] [ref=f10e96]
+          - paragraph [ref=f10e97]: There is a quiet comfort in being around you. Every single time, it just feels like coming home. I never have to put on a mask or hide anything, because with you, I can just be completely myself, and that is the safest feeling in the world.
+          - generic: ♥
+    - generic [ref=f10e98]:
+      - generic [ref=f10e99]: 🌸
+      - generic [ref=f10e100]: 🌸
+      - generic [ref=f10e101]: 🌸
+      - generic [ref=f10e102]: 🌸
+      - generic [ref=f10e103]: 🌸
+      - generic [ref=f10e104]: 🌸
+      - generic [ref=f10e105]: 🌸
+    - generic [ref=f10e107]:
+      - heading "The Most Beautiful Person I Know 🌸" [level=2] [ref=f10e108]
+      - generic [ref=f10e109]:
+        - generic [ref=f10e112] [cursor=pointer]:
+          - img "Just being you ✨" [ref=f10e114]
+          - paragraph [ref=f10e115]: Just being you ✨
+        - generic [ref=f10e118] [cursor=pointer]:
+          - img "That Sexy face 😍" [ref=f10e120]
+          - paragraph [ref=f10e121]: That Sexy face 😍
+        - generic [ref=f10e124] [cursor=pointer]:
+          - img "Sari suits you so well 💕" [ref=f10e126]
+          - paragraph [ref=f10e127]: Sari suits you so well 💕
+        - generic [ref=f10e130] [cursor=pointer]:
+          - img "Always stunning and in Vacation mode 🌸" [ref=f10e132]
+          - paragraph [ref=f10e133]: Always stunning and in Vacation mode 🌸
+    - generic [ref=f10e134]:
+      - generic [ref=f10e216]: ♥
+      - generic [ref=f10e217]: ♥
+      - generic [ref=f10e218]: ♥
+      - generic [ref=f10e219]: ♥
+      - generic [ref=f10e220]: ♥
+    - generic [ref=f10e136]:
+      - heading "Our Story So Far ✨" [level=2] [ref=f10e137]
+      - generic [ref=f10e140]:
+        - button "💕 We Matched" [ref=f10e141] [cursor=pointer]:
+          - generic [ref=f10e142]: 💕
+          - generic [ref=f10e143]: We Matched
+        - button "☕ First Date" [ref=f10e144] [cursor=pointer]:
+          - generic [ref=f10e145]: ☕
+          - generic [ref=f10e146]: First Date
+        - button "🏠 Thanksgiving 2026" [ref=f10e147] [cursor=pointer]:
+          - generic [ref=f10e148]: 🏠
+          - generic [ref=f10e149]: Thanksgiving 2026
+        - button "⚽ FIFA World" [ref=f10e150] [cursor=pointer]:
+          - generic [ref=f10e151]: ⚽
+          - generic [ref=f10e152]: FIFA World
+        - button "📚 Started Studying" [ref=f10e153] [cursor=pointer]:
+          - generic [ref=f10e154]: 📚
+          - generic [ref=f10e155]: Started Studying
+        - button "📖 Still Studying" [ref=f10e156] [cursor=pointer]:
+          - generic [ref=f10e157]: 📖
+          - generic [ref=f10e158]: Still Studying
+    - generic [ref=f10e163]:
+      - heading "Make a Birthday Wish ✨" [level=2] [ref=f10e164]
+      - paragraph [ref=f10e165]: Close your eyes, think of something beautiful, and let it fly...
+      - generic [ref=f10e166]:
+        - textbox "Make a wish and let it fly..." [ref=f10e168]
+        - button "🎁 Send Your Wish" [disabled] [ref=f10e169]
+    - generic [ref=f10e170]:
+      - generic [ref=f10e171]: 🌸
+      - generic [ref=f10e172]: 🌸
+      - generic [ref=f10e173]: 🌸
+      - generic [ref=f10e174]: 🌸
+      - generic [ref=f10e175]: 🌸
+      - generic [ref=f10e176]: 🌸
+      - generic [ref=f10e177]: 🌸
+    - generic [ref=f10e178]:
+      - paragraph [ref=f10e179]: Take a deep breath and blow out the candles 🎂
+      - generic [ref=f10e181]:
+        - generic [ref=f10e182] [cursor=pointer]
+        - generic [ref=f10e186] [cursor=pointer]
+        - generic [ref=f10e190] [cursor=pointer]
+        - generic [ref=f10e194] [cursor=pointer]
+        - generic [ref=f10e198] [cursor=pointer]
+      - paragraph [ref=f10e205]: or tap each candle
+  - button "♥" [ref=f10e206] [cursor=pointer]
