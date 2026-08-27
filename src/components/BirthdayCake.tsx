@@ -8,6 +8,7 @@ export default function BirthdayCake() {
   const [candlesBlown, setCandlesBlown] = useState(0)
   const [showCelebration, setShowCelebration] = useState(false)
   const [micRequested, setMicRequested] = useState(false)
+  const [blowProcessed, setBlowProcessed] = useState(false)
   const { isBlowing, start, stop, error } = useBlowDetection()
 
   useEffect(() => {
@@ -28,15 +29,17 @@ export default function BirthdayCake() {
   }, [candlesBlown, showCelebration, stop])
 
   useEffect(() => {
-    if (micRequested && isBlowing && candlesBlown < candleCount) {
-      const timer = setTimeout(() => {
-        if (isBlowing && candlesBlown < candleCount) {
-          setCandlesBlown((prev) => prev + 1)
-        }
-      }, 1000)
-      return () => clearTimeout(timer)
+    if (!micRequested || candlesBlown >= candleCount) return
+
+    if (isBlowing && !blowProcessed) {
+      setCandlesBlown((prev) => Math.min(prev + 1, candleCount))
+      setBlowProcessed(true)
     }
-  }, [isBlowing, candlesBlown, micRequested])
+
+    if (!isBlowing && blowProcessed) {
+      setBlowProcessed(false)
+    }
+  }, [isBlowing, candlesBlown, micRequested, blowProcessed])
 
   const handleFirstInteraction = () => {
     if (!micRequested) {
@@ -68,7 +71,7 @@ export default function BirthdayCake() {
       </motion.p>
 
       <div className="relative mb-8">
-        <div className="flex justify-center gap-4 mb-4">
+        <div className="flex justify-center gap-6 mb-2">
           {Array.from({ length: candleCount }, (_, i) => (
             <motion.div
               key={i}
@@ -77,24 +80,25 @@ export default function BirthdayCake() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-3 h-16 bg-gradient-to-b from-pastel-rose to-pastel-pink rounded-t-full" />
+              <div className="w-2 h-14 bg-gradient-to-b from-pastel-rose to-pastel-pink rounded-t-sm shadow-sm" />
 
               <AnimatePresence>
                 {i >= candlesBlown && (
                   <motion.div
-                    className="absolute -top-6 left-1/2 -translate-x-1/2"
+                    className="absolute -top-8 left-1/2 -translate-x-1/2"
                     initial={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
                   >
                     <motion.div
-                      className="w-4 h-6 bg-gradient-to-t from-orange-400 via-yellow-300 to-yellow-100 rounded-full"
+                      className="w-3 h-5 bg-gradient-to-t from-orange-500 via-yellow-400 to-yellow-200 rounded-full shadow-lg shadow-orange-400/50"
                       animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.8, 1, 0.8],
+                        scale: [1, 1.3, 1],
+                        opacity: [0.9, 1, 0.9],
+                        rotate: [-2, 2, -2],
                       }}
                       transition={{
-                        duration: 0.5,
+                        duration: 0.6,
                         repeat: Infinity,
                         ease: 'easeInOut',
                       }}
@@ -106,11 +110,11 @@ export default function BirthdayCake() {
               <AnimatePresence>
                 {i < candlesBlown && (
                   <motion.div
-                    className="absolute -top-8 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-400/50 rounded-full"
+                    className="absolute -top-10 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-400/60 rounded-full"
                     initial={{ opacity: 0, y: 0 }}
-                    animate={{ opacity: [0, 1, 0], y: -30 }}
+                    animate={{ opacity: [0, 1, 0], y: -40 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 1.5 }}
                   />
                 )}
               </AnimatePresence>
@@ -118,9 +122,18 @@ export default function BirthdayCake() {
           ))}
         </div>
 
-        <div className="w-64 h-20 bg-gradient-to-b from-pastel-pink to-pastel-rose rounded-t-lg shadow-lg" />
-        <div className="w-72 h-16 bg-gradient-to-b from-pastel-rose to-pastel-lavender rounded-b-lg shadow-lg -mt-1" />
-        <div className="w-80 h-12 bg-gradient-to-b from-pastel-lavender to-pastel-pink rounded-b-xl shadow-lg -mt-1" />
+        <div className="w-56 h-16 bg-gradient-to-b from-pastel-pink to-pastel-rose rounded-t-2xl shadow-lg relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-3 bg-white/30 rounded-t-2xl" />
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-pastel-rose/50" />
+        </div>
+        <div className="w-64 h-14 bg-gradient-to-b from-pastel-rose to-pastel-lavender rounded-lg shadow-lg relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-2 bg-white/20" />
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-pastel-lavender/50" />
+        </div>
+        <div className="w-72 h-12 bg-gradient-to-b from-pastel-lavender to-pastel-pink rounded-b-xl shadow-lg relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-2 bg-white/20" />
+          <div className="absolute bottom-0 left-0 right-0 h-2 bg-pastel-pink/50" />
+        </div>
       </div>
 
       {!micRequested && (

@@ -8,7 +8,7 @@ interface BlowDetectionResult {
   error: string | null
 }
 
-export function useBlowDetection(threshold = 150): BlowDetectionResult {
+export function useBlowDetection(threshold = 50): BlowDetectionResult {
   const [volume, setVolume] = useState(0)
   const [isBlowing, setIsBlowing] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -27,7 +27,13 @@ export function useBlowDetection(threshold = 150): BlowDetectionResult {
 
     const average = dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length
     setVolume(average)
-    setIsBlowing(average > threshold)
+
+    setIsBlowing((prev) => {
+      if (prev) {
+        return average > threshold * 0.6
+      }
+      return average > threshold
+    })
 
     animationFrameRef.current = requestAnimationFrame(analyze)
   }, [threshold])
