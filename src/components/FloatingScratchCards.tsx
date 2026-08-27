@@ -61,10 +61,15 @@ export default function FloatingScratchCards() {
     setTimeout(() => setActiveCard(null), 500)
   }
 
+  const [draggingId, setDraggingId] = useState<string | null>(null)
+
   const handlePointerDown = useCallback((id: string, e: React.PointerEvent) => {
     const card = cardPositions.find((c) => c.id === id)
     if (!card) return
 
+    e.currentTarget.setPointerCapture(e.pointerId)
+    setDraggingId(id)
+    
     dragRef.current = {
       id,
       startX: e.clientX,
@@ -81,7 +86,7 @@ export default function FloatingScratchCards() {
     const dx = e.clientX - dragRef.current.startX
     const dy = e.clientY - dragRef.current.startY
 
-    if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
       dragRef.current.hasMoved = true
     }
 
@@ -91,8 +96,8 @@ export default function FloatingScratchCards() {
     const currentX = (dragRef.current.startCardX / 100) * viewportWidth
     const currentY = (dragRef.current.startCardY / 100) * viewportHeight
 
-    const newX = Math.max(0, Math.min(85, ((currentX + dx) / viewportWidth) * 100))
-    const newY = Math.max(0, Math.min(85, ((currentY + dy) / viewportHeight) * 100))
+    const newX = Math.max(0, Math.min(90, ((currentX + dx) / viewportWidth) * 100))
+    const newY = Math.max(0, Math.min(90, ((currentY + dy) / viewportHeight) * 100))
 
     setCardPositions((prev) =>
       prev.map((c) =>
@@ -101,8 +106,11 @@ export default function FloatingScratchCards() {
     )
   }, [])
 
-  const handlePointerUp = useCallback(() => {
+  const handlePointerUp = useCallback((e: React.PointerEvent) => {
     if (!dragRef.current) return
+
+    e.currentTarget.releasePointerCapture(e.pointerId)
+    setDraggingId(null)
 
     if (!dragRef.current.hasMoved && !revealedCards.has(dragRef.current.id)) {
       setActiveCard(dragRef.current.id)
@@ -135,8 +143,9 @@ export default function FloatingScratchCards() {
           style={{
             left: `${card.x}%`,
             top: `${card.y}%`,
-            animation: `float-${card.id} ${card.duration}s ease-in-out infinite`,
-            animationDelay: `${card.delay}s`,
+            animation: draggingId === card.id 
+              ? 'none' 
+              : `float-${card.id} ${card.duration}s ease-in-out ${card.delay}s infinite`,
           }}
         >
           <div
@@ -204,20 +213,20 @@ export default function FloatingScratchCards() {
             animate={{
               opacity: 1,
               scale: 1,
-              y: [0, -15, 0],
-              x: [0, 8, 0],
+              y: draggingId === msg.id ? 0 : [0, -15, 0],
+              x: draggingId === msg.id ? 0 : [0, 8, 0],
             }}
             exit={{ opacity: 0, scale: 0 }}
             transition={{
               opacity: { duration: 0.5 },
               scale: { duration: 0.5 },
-              y: {
+              y: draggingId === msg.id ? { duration: 0 } : {
                 duration: msg.duration,
                 repeat: Infinity,
                 delay: msg.delay,
                 ease: 'easeInOut',
               },
-              x: {
+              x: draggingId === msg.id ? { duration: 0 } : {
                 duration: msg.duration * 0.8,
                 repeat: Infinity,
                 delay: msg.delay,
