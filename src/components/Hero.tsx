@@ -4,7 +4,7 @@ import FloatingElements from './FloatingElements'
 
 function StaggeredText({ text }: { text: string }) {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden pb-2 sm:pb-3">
       {text.split('').map((char, i) => (
         <motion.span
           key={i}

@@ -34,11 +34,11 @@ export default function TimelineCard({
           transition={{ type: 'spring', damping: 25 }}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="relative h-48 sm:h-56 overflow-hidden">
+          <div className="relative overflow-hidden">
             <img
               src={photo}
               alt={title}
-              className="w-full h-full object-cover"
+              className="w-full h-auto max-h-[60vh] object-contain"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="absolute top-4 left-1/2 -translate-x-1/2 text-3xl">{icon}</div>

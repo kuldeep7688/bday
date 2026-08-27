@@ -30,7 +30,7 @@ export default function PhotoCard({ src, caption, message, index }: PhotoCardPro
           <img
             src={src}
             alt={caption}
-            className="w-36 h-36 sm:w-44 sm:h-44 object-cover rounded"
+            className="w-72 h-72 sm:w-80 sm:h-80 object-cover rounded"
           />
         </div>
         <p className="font-display text-sm text-soft-text/80 text-center mt-2 italic">
@@ -48,15 +48,16 @@ export default function PhotoCard({ src, caption, message, index }: PhotoCardPro
             onClick={() => setIsZoomed(false)}
           >
             <motion.div
-              className="bg-white rounded-2xl p-6 max-w-sm text-center"
+              className="bg-white rounded-2xl p-6 max-w-[90vw] max-h-[90vh] overflow-auto text-center"
               initial={{ scale: 0.8, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.8, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={src}
                 alt={caption}
-                className="w-full h-64 object-cover rounded-lg mb-4"
+                className="max-w-full max-h-[70vh] w-auto h-auto object-contain rounded-lg mb-4"
               />
               <p className="text-soft-text/80 italic">{message}</p>
               <button
