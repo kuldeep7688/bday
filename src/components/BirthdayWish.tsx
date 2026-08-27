@@ -36,6 +36,7 @@ export default function BirthdayWish() {
     })
 
     await Promise.all([apiCall, animation])
+    setWish('')
     setIsSubmitted(true)
   }
 
