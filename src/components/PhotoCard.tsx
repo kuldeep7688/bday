@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { createPortal } from 'react-dom'
 
 interface PhotoCardProps {
   src: string
@@ -63,10 +64,10 @@ export default function PhotoCard({ src, caption, message, index }: PhotoCardPro
         </motion.div>
       </motion.div>
 
-      <AnimatePresence>
-        {isZoomed && (
+      {isZoomed && createPortal(
+        <AnimatePresence>
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+            className="fixed inset-0 z-[9998] flex items-center justify-center bg-black p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -93,8 +94,9 @@ export default function PhotoCard({ src, caption, message, index }: PhotoCardPro
               </button>
             </motion.div>
           </motion.div>
-        )}
-      </AnimatePresence>
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   )
 }
