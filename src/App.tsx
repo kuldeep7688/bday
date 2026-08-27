@@ -10,6 +10,7 @@ import FloatingStickers from './components/FloatingStickers'
 import HeartTrail from './components/HeartTrail'
 import BirthdayWish from './components/BirthdayWish'
 import MusicPlayer from './components/MusicPlayer'
+import FloatingScratchCards from './components/FloatingScratchCards'
 import { songSrc } from './config/content'
 
 export default function App() {
@@ -63,6 +64,7 @@ export default function App() {
           >
             <HeartTrail />
             <FloatingStickers />
+            <FloatingScratchCards />
             <Hero />
             <WhyYoureSpecial />
             <PhotoGallery />

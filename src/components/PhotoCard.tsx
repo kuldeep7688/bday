@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface PhotoCardProps {
@@ -10,32 +10,57 @@ interface PhotoCardProps {
 
 export default function PhotoCard({ src, caption, message, index }: PhotoCardProps) {
   const [isZoomed, setIsZoomed] = useState(false)
+  const [tilt, setTilt] = useState({ x: 0, y: 0 })
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!cardRef.current) return
+    const rect = cardRef.current.getBoundingClientRect()
+    const x = (e.clientX - rect.left) / rect.width - 0.5
+    const y = (e.clientY - rect.top) / rect.height - 0.5
+    setTilt({ x: y * -8, y: x * 8 })
+  }
+
+  const handleMouseLeave = () => {
+    setTilt({ x: 0, y: 0 })
+  }
 
   return (
     <>
       <motion.div
+        ref={cardRef}
         className="relative group cursor-pointer"
+        style={{
+          transformStyle: 'preserve-3d',
+          perspective: '1000px',
+        }}
         initial={{ opacity: 0, rotate: 0 }}
         whileInView={{ opacity: 1, rotate: [-3, 3, 0] }}
         viewport={{ once: true }}
         transition={{ delay: index * 0.2, duration: 0.6 }}
-        whileHover={{
-          rotate: [0, -2, 2, 0],
-          scale: 1.05,
-          y: -8,
-        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
         onClick={() => setIsZoomed(true)}
       >
-        <div className="bg-white p-3 pb-12 rounded-lg shadow-lg shadow-pastel-pink/20">
-          <img
-            src={src}
-            alt={caption}
-            className="w-72 h-72 sm:w-80 sm:h-80 object-cover rounded"
-          />
-        </div>
-        <p className="font-display text-sm text-soft-text/80 text-center mt-2 italic">
-          {caption}
-        </p>
+        <motion.div
+          animate={{
+            rotateX: tilt.x,
+            rotateY: tilt.y,
+            boxShadow: `${-tilt.y * 2}px ${tilt.x * 2}px 20px rgba(255, 182, 193, 0.3)`,
+          }}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+        >
+          <div className="bg-white p-3 pb-12 rounded-lg shadow-lg shadow-pastel-pink/20">
+            <img
+              src={src}
+              alt={caption}
+              className="w-72 h-72 sm:w-80 sm:h-80 object-cover rounded"
+            />
+          </div>
+          <p className="font-display text-sm text-soft-text/80 text-center mt-2 italic">
+            {caption}
+          </p>
+        </motion.div>
       </motion.div>
 
       <AnimatePresence>

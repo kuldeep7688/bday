@@ -48,6 +48,13 @@ export const photos = [
   },
 ]
 
+export const scratchMessages = [
+  'You light up my world 💫',
+  'Forever grateful 💕',
+  'My favorite person 🌸',
+  'Better with you ✨',
+]
+
 export const timeline = [
   {
     icon: '💕',

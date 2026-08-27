@@ -1,11 +1,34 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import confetti from 'canvas-confetti'
 import { timeline } from '../config/content'
 import TimelineCard from './TimelineCard'
 
 export default function Timeline() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
   const selectedItem = selectedIndex !== null ? timeline[selectedIndex] : null
+
+  const handleIconClick = (index: number, e: React.MouseEvent) => {
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect()
+    const x = (rect.left + rect.width / 2) / window.innerWidth
+    const y = (rect.top + rect.height / 2) / window.innerHeight
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (!prefersReducedMotion) {
+      confetti({
+        particleCount: 30,
+        spread: 60,
+        origin: { x, y },
+        colors: ['#FFB6C1', '#FFD1DC', '#E6E6FA', '#FFF0F5', '#FFD700'],
+        startVelocity: 20,
+        gravity: 0.8,
+        ticks: 80,
+      })
+    }
+
+    setSelectedIndex(index)
+  }
 
   return (
     <section className="py-20 sm:py-32 bg-gradient-to-b from-pastel-blush/30 to-pastel-lavender/20 px-4">
@@ -32,7 +55,7 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                onClick={() => setSelectedIndex(index)}
+                onClick={(e) => handleIconClick(index, e)}
               >
                 <motion.div
                   className="w-16 h-16 rounded-full bg-white shadow-md shadow-pastel-pink/20 flex items-center justify-center text-2xl mb-3 group-hover:shadow-lg transition-shadow"

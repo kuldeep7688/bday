@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { herName, heroSubtitle } from '../config/content'
 import FloatingElements from './FloatingElements'
 
@@ -24,10 +25,44 @@ function StaggeredText({ text }: { text: string }) {
   )
 }
 
+interface HeartBurst {
+  id: number
+  x: number
+  y: number
+}
+
 export default function Hero() {
+  const [hearts, setHearts] = useState<HeartBurst[]>([])
+  const timerRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current !== null) {
+        clearTimeout(timerRef.current)
+      }
+    }
+  }, [])
+
+  const handleArrowClick = () => {
+    if (timerRef.current !== null) {
+      clearTimeout(timerRef.current)
+    }
+
+    const newHearts: HeartBurst[] = Array.from({ length: 30 }, (_, i) => ({
+      id: Date.now() + i,
+      x: (Math.random() - 0.5) * 500,
+      y: (Math.random() - 0.5) * 500,
+    }))
+    setHearts(newHearts)
+    timerRef.current = window.setTimeout(() => {
+      setHearts([])
+      timerRef.current = null
+    }, 2000)
+  }
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative bg-gradient-to-b from-pastel-blush to-white overflow-hidden px-4">
-      <FloatingElements hearts sparkles />
+      <FloatingElements hearts sparkles flowers stars />
 
       <div className="relative z-10 text-center">
         <motion.p
@@ -53,10 +88,28 @@ export default function Hero() {
         </motion.p>
       </div>
 
+      <AnimatePresence>
+        {hearts.map((heart) => (
+          <motion.div
+            key={heart.id}
+            className="fixed bottom-8 left-1/2 text-4xl pointer-events-none z-50"
+            initial={{ x: 0, y: 0, opacity: 1, scale: 0 }}
+            animate={{ x: heart.x, y: heart.y, opacity: 0, scale: 2 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 2, ease: 'easeOut' }}
+          >
+            🌸
+          </motion.div>
+        ))}
+      </AnimatePresence>
+
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
+        onClick={handleArrowClick}
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
       >
         <svg
           className="w-6 h-6 text-pastel-pink"

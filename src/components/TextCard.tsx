@@ -14,6 +14,10 @@ export default function TextCard({ title, text, index }: TextCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ delay: index * 0.15, duration: 0.6 }}
+      whileHover={{
+        boxShadow: '0 0 30px rgba(255,182,193,0.3)',
+        scale: 1.02,
+      }}
     >
       <motion.h3
         className="font-display text-xl sm:text-2xl text-soft-text mb-3"
