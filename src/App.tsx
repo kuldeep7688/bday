@@ -12,6 +12,7 @@ import BirthdayWish from './components/BirthdayWish'
 import MusicPlayer from './components/MusicPlayer'
 import FloatingScratchCards from './components/FloatingScratchCards'
 import AnimatedDivider from './components/AnimatedDivider'
+import BirthdayCake from './components/BirthdayCake'
 import { songSrc } from './config/content'
 
 export default function App() {
@@ -75,6 +76,8 @@ export default function App() {
             <Timeline />
             <AnimatedDivider variant="wave" />
             <BirthdayWish />
+            <AnimatedDivider variant="petals" />
+            <BirthdayCake />
           </motion.main>
         )}
       </AnimatePresence>

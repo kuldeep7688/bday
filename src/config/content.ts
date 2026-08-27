@@ -55,6 +55,11 @@ export const scratchMessages = [
   'Better with you ✨',
 ]
 
+export const cakePrompt = 'Take a deep breath and blow out the candles 🎂'
+export const cakeFallback = 'or tap each candle'
+export const finalMessage = 'Make a wish, Archita. You deserve all the happiness in the world ✨'
+export const candleCount = 5
+
 export const timeline = [
   {
     icon: '💕',
