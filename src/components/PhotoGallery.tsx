@@ -21,7 +21,15 @@ export default function PhotoGallery() {
 
         <div className="flex flex-nowrap justify-center gap-4 sm:gap-6">
           {photos.map((photo, index) => (
-            <PhotoCard key={photo.src} {...photo} index={index} />
+            <motion.div
+              key={photo.src}
+              initial={{ opacity: 0, y: 60, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ delay: index * 0.3, duration: 0.6, ease: 'easeOut' }}
+            >
+              <PhotoCard {...photo} index={index} />
+            </motion.div>
           ))}
         </div>
       </div>

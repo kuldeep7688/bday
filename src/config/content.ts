@@ -1,6 +1,8 @@
-export const UNLOCK_DATE = new Date('2026-09-03T00:00:01')
+export const UNLOCK_DATE = new Date('2025-09-03T00:00:01')
 
 export const herName = 'Archita'
+
+export const songSrc = '/assets/birthday-song.mp3'
 
 export const heroSubtitle = 'Today the world got a little brighter ✨'
 
@@ -45,6 +47,18 @@ export const photos = [
     message: 'Cant wait for all places you will take me for vacations.',
   },
 ]
+
+export const scratchMessages = [
+  'You light up my world 💫',
+  'Forever grateful 💕',
+  'My favorite person 🌸',
+  'Better with you ✨',
+]
+
+export const cakePrompt = 'Take a deep breath and blow out the candles 🎂'
+export const cakeFallback = 'or tap each candle'
+export const finalMessage = 'Make a wish, Archita. You deserve all the happiness in the world ✨'
+export const candleCount = 5
 
 export const timeline = [
   {

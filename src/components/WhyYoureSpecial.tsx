@@ -18,7 +18,15 @@ export default function WhyYoureSpecial() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {reasonsILoveYou.map((reason, index) => (
-            <TextCard key={reason.title} {...reason} index={index} />
+            <motion.div
+              key={reason.title}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ delay: index * 0.15, duration: 0.6, ease: 'easeOut' }}
+            >
+              <TextCard {...reason} index={index} />
+            </motion.div>
           ))}
         </div>
       </div>

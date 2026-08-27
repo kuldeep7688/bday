@@ -9,6 +9,11 @@ import Timeline from './components/Timeline'
 import FloatingStickers from './components/FloatingStickers'
 import HeartTrail from './components/HeartTrail'
 import BirthdayWish from './components/BirthdayWish'
+import MusicPlayer from './components/MusicPlayer'
+import FloatingScratchCards from './components/FloatingScratchCards'
+import AnimatedDivider from './components/AnimatedDivider'
+import BirthdayCake from './components/BirthdayCake'
+import { songSrc } from './config/content'
 
 export default function App() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -61,14 +66,22 @@ export default function App() {
           >
             <HeartTrail />
             <FloatingStickers />
+            <FloatingScratchCards />
             <Hero />
+            <AnimatedDivider variant="wave" />
             <WhyYoureSpecial />
+            <AnimatedDivider variant="petals" />
             <PhotoGallery />
+            <AnimatedDivider variant="hearts" />
             <Timeline />
+            <AnimatedDivider variant="wave" />
             <BirthdayWish />
+            <AnimatedDivider variant="petals" />
+            <BirthdayCake />
           </motion.main>
         )}
       </AnimatePresence>
+      {isUnlocked && <MusicPlayer src={songSrc} />}
     </>
   )
 }
