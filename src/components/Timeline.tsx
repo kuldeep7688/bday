@@ -44,7 +44,15 @@ export default function Timeline() {
         </motion.h2>
 
         <div className="relative">
-          <div className="absolute top-8 left-0 right-0 h-0.5 bg-pastel-pink/30 hidden sm:block" />
+          <div className="absolute top-8 left-0 right-0 h-0.5 bg-pastel-pink/30 hidden sm:block">
+            <motion.div
+              className="h-full bg-pastel-pink"
+              initial={{ width: '0%' }}
+              whileInView={{ width: '100%' }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: 'easeInOut' }}
+            />
+          </div>
 
           <div className="flex justify-between items-start overflow-x-auto sm:overflow-visible pb-4 sm:pb-0 gap-4 sm:gap-0">
             {timeline.map((item, index) => (
@@ -54,7 +62,7 @@ export default function Timeline() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                transition={{ delay: 1.5 + index * 0.1, duration: 0.5 }}
                 onClick={(e) => handleIconClick(index, e)}
               >
                 <motion.div

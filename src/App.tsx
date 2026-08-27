@@ -11,6 +11,7 @@ import HeartTrail from './components/HeartTrail'
 import BirthdayWish from './components/BirthdayWish'
 import MusicPlayer from './components/MusicPlayer'
 import FloatingScratchCards from './components/FloatingScratchCards'
+import AnimatedDivider from './components/AnimatedDivider'
 import { songSrc } from './config/content'
 
 export default function App() {
@@ -66,9 +67,13 @@ export default function App() {
             <FloatingStickers />
             <FloatingScratchCards />
             <Hero />
+            <AnimatedDivider variant="wave" />
             <WhyYoureSpecial />
+            <AnimatedDivider variant="petals" />
             <PhotoGallery />
+            <AnimatedDivider variant="hearts" />
             <Timeline />
+            <AnimatedDivider variant="wave" />
             <BirthdayWish />
           </motion.main>
         )}

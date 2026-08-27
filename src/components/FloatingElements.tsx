@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useParallax } from '../hooks/useParallax'
 
 interface FloatingElement {
   id: number
@@ -49,6 +50,8 @@ const stars: FloatingElement[] = [
 ]
 
 function FloatingHeart({ element }: { element: FloatingElement }) {
+  const scrollY = useParallax()
+  const parallaxSpeed = element.layer === 'background' ? 0.1 : element.layer === 'midground' ? 0.3 : 0.5
   const zIndex = element.layer === 'background' ? 'z-0' : element.layer === 'midground' ? 'z-10' : 'z-20'
 
   return (
@@ -59,17 +62,31 @@ function FloatingHeart({ element }: { element: FloatingElement }) {
         bottom: '-30px',
         fontSize: element.size,
         opacity: element.opacity,
+        y: scrollY * parallaxSpeed,
       }}
       animate={{
-        y: ['0vh', '-110vh'],
+        y: [scrollY * parallaxSpeed, scrollY * parallaxSpeed - 110 * window.innerHeight / 100, scrollY * parallaxSpeed],
         x: [0, Math.sin(element.id) * 30, 0],
         rotate: [0, 15, -15, 0],
       }}
       transition={{
-        duration: element.duration,
-        repeat: Infinity,
-        delay: element.delay,
-        ease: 'linear',
+        y: {
+          duration: element.duration,
+          repeat: Infinity,
+          ease: 'linear',
+        },
+        x: {
+          duration: element.duration,
+          repeat: Infinity,
+          delay: element.delay,
+          ease: 'linear',
+        },
+        rotate: {
+          duration: element.duration,
+          repeat: Infinity,
+          delay: element.delay,
+          ease: 'linear',
+        },
       }}
     >
       ♥

@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { herName, heroSubtitle } from '../config/content'
 import FloatingElements from './FloatingElements'
+import { useParallax } from '../hooks/useParallax'
 
 function StaggeredText({ text }: { text: string }) {
   return (
@@ -34,6 +35,7 @@ interface HeartBurst {
 export default function Hero() {
   const [hearts, setHearts] = useState<HeartBurst[]>([])
   const timerRef = useRef<number | null>(null)
+  const scrollY = useParallax()
 
   useEffect(() => {
     return () => {
@@ -61,7 +63,12 @@ export default function Hero() {
   }
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center relative bg-gradient-to-b from-pastel-blush to-white overflow-hidden px-4">
+    <section
+      className="min-h-screen flex flex-col items-center justify-center relative bg-gradient-to-b from-pastel-blush to-white overflow-hidden px-4"
+      style={{
+        backgroundPosition: `center ${scrollY * 0.1}px`,
+      }}
+    >
       <FloatingElements hearts sparkles flowers stars />
 
       <div className="relative z-10 text-center">
