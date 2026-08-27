@@ -1,6 +1,8 @@
-export const UNLOCK_DATE = new Date('2026-09-03T00:00:01')
+export const UNLOCK_DATE = new Date('2025-09-03T00:00:01')
 
 export const herName = 'Archita'
+
+export const songSrc = '/assets/birthday-song.mp3'
 
 export const heroSubtitle = 'Today the world got a little brighter ✨'
 

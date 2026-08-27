@@ -9,6 +9,8 @@ import Timeline from './components/Timeline'
 import FloatingStickers from './components/FloatingStickers'
 import HeartTrail from './components/HeartTrail'
 import BirthdayWish from './components/BirthdayWish'
+import MusicPlayer from './components/MusicPlayer'
+import { songSrc } from './config/content'
 
 export default function App() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -69,6 +71,7 @@ export default function App() {
           </motion.main>
         )}
       </AnimatePresence>
+      {isUnlocked && <MusicPlayer src={songSrc} />}
     </>
   )
 }
