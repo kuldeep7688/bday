@@ -16,7 +16,7 @@ export default function PhotoGallery() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          The Most Beautiful Person I Know 🌸
+          🌸 The Prettiest and Funniest Person I Know in Connecticut 🌸
         </motion.h2>
 
         <div className="flex flex-nowrap justify-center gap-4 sm:gap-6">

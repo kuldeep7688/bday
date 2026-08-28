@@ -1,10 +1,10 @@
-export const UNLOCK_DATE = new Date('2026-09-03T00:00:01')
+export const UNLOCK_DATE = new Date('2025-09-03T00:00:01')
 
 export const herName = 'Archita'
 
 export const songSrc = '/assets/birthday-song.mp3'
 
-export const heroSubtitle = 'Today the world got a little brighter ✨'
+export const heroSubtitle = 'Enjoy its your day !!! ✨'
 
 export const reasonsILoveYou = [
   {
@@ -49,10 +49,10 @@ export const photos = [
 ]
 
 export const scratchMessages = [
-  'You light up my world 💫',
-  'Forever grateful 💕',
-  'My favorite person 🌸',
-  'Better with you ✨',
+  'A calm heart builds a full life, one quiet step at a time. 💫',
+  'Love finds you in the season you stop chasing and start becoming. 💕',
+  'Fear whispers \'never.\' Faith whispers \'not yet.\' 🌸',
+  'You\'re going to laugh about this someday. Not the pain — the surprise of how it all worked out. ✨',
 ]
 
 export const cakePrompt = 'Take a deep breath and blow out the candles 🎂'
