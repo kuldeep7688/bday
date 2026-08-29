@@ -1,0 +1,32 @@
+name: Test Merge Pipeline
+
+on:
+  schedule:
+    # Run at 00:45 UTC on Aug 29
+    - cron: '45 0 29 8 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Merge develop into test-target
+        run: |
+          git checkout test-target
+          git pull origin test-target
+          git merge origin/develop --no-ff -m "test: merge develop into test-target 🧪"
+          git push origin test-target
