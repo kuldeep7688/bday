@@ -84,7 +84,7 @@ export default function LockScreen({ onUnlock }: { onUnlock: () => void }) {
               animate={{ opacity: [0.6, 1, 0.6] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Something special is coming...
+              Something I made to surprise you !!!
             </motion.p>
 
             <div className="flex gap-3 sm:gap-4 justify-center mb-8">
