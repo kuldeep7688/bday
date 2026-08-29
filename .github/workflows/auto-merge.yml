@@ -28,5 +28,6 @@ jobs:
         run: |
           git checkout main
           git pull origin main
-          git merge origin/develop --no-ff -m "chore: auto-merge develop to main for birthday launch 🎂"
+          git checkout origin/develop -- .
+          git commit -m "chore: auto-merge develop to main for birthday launch 🎂" || echo "No changes to commit"
           git push origin main
