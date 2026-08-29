@@ -1,0 +1,32 @@
+name: Auto Merge Develop to Main
+
+on:
+  schedule:
+    # Run at 23:55 EDT (03:55 UTC) on September 3
+    - cron: '55 3 3 9 *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Merge develop into main
+        run: |
+          git checkout main
+          git pull origin main
+          git merge origin/develop --no-ff -m "chore: auto-merge develop to main for birthday launch 🎂"
+          git push origin main
