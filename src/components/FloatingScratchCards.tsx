@@ -8,8 +8,6 @@ interface FloatingMessage {
   text: string
   x: number
   y: number
-  delay: number
-  duration: number
 }
 
 const initialCards: FloatingMessage[] = scratchMessages.map((text, index) => ({
@@ -17,8 +15,6 @@ const initialCards: FloatingMessage[] = scratchMessages.map((text, index) => ({
   text,
   x: 0,
   y: 0,
-  delay: index * 0.5,
-  duration: 12 + index * 2,
 }))
 
 const getRandomPosition = () => ({
@@ -70,40 +66,37 @@ export default function FloatingScratchCards() {
       }}
     >
       {unrevealedCards.map((card) => (
-        <div
+        <motion.div
           key={card.id}
-          className="absolute pointer-events-auto"
+          className="absolute pointer-events-auto cursor-grab active:cursor-grabbing"
           style={{
             left: `${card.x}%`,
             top: `${card.y}%`,
-            animation: `float-${card.id} ${card.duration}s ease-in-out ${card.delay}s infinite`,
           }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+          }}
+          exit={{ opacity: 0, scale: 0 }}
+          transition={{
+            opacity: { duration: 0.5 },
+            scale: { duration: 0.5 },
+          }}
+          drag
+          dragElastic={0}
+          dragMomentum={false}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.95 }}
+          onDoubleClick={() => handleDoubleClick(card.id)}
         >
-          <motion.div
-            className="cursor-pointer select-none"
-            onDoubleClick={() => handleDoubleClick(card.id)}
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <div className="bg-gradient-to-br from-pastel-pink via-pastel-lavender to-pastel-rose px-5 py-3 rounded-xl shadow-lg border border-white/50 backdrop-blur-sm">
-              <p className="text-white text-sm font-semibold whitespace-nowrap">
-                ✨ Double-click to scratch ✨
-              </p>
-            </div>
-          </motion.div>
-        </div>
+          <div className="bg-gradient-to-br from-pastel-pink via-pastel-lavender to-pastel-rose px-5 py-3 rounded-xl shadow-lg border border-white/50 backdrop-blur-sm select-none">
+            <p className="text-white text-sm font-semibold whitespace-nowrap">
+              ✨ Double-click to scratch ✨
+            </p>
+          </div>
+        </motion.div>
       ))}
-
-      <style>{`
-        ${initialCards.map((card) => `
-          @keyframes float-${card.id} {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(6px, -10px); }
-            50% { transform: translate(-4px, -18px); }
-            75% { transform: translate(10px, -8px); }
-          }
-        `).join('')}
-      `}</style>
 
       <AnimatePresence>
         {activeCard && (
@@ -120,6 +113,7 @@ export default function FloatingScratchCards() {
               exit={{ scale: 0.5, opacity: 0 }}
               transition={{ duration: 0.4, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
+              className="pointer-events-auto"
             >
               <ScratchCard
                 width={180}
@@ -136,32 +130,21 @@ export default function FloatingScratchCards() {
         {revealedMessages.map((msg) => (
           <motion.div
             key={`revealed-${msg.id}`}
-            className="absolute pointer-events-none select-none"
+            className="absolute pointer-events-auto select-none cursor-grab active:cursor-grabbing"
             style={{ left: `${msg.x}%`, top: `${msg.y}%` }}
             initial={{ opacity: 0, scale: 0 }}
             animate={{
               opacity: 1,
               scale: 1,
-              y: [0, -15, 0],
-              x: [0, 8, 0],
             }}
             exit={{ opacity: 0, scale: 0 }}
             transition={{
               opacity: { duration: 0.5 },
               scale: { duration: 0.5 },
-              y: {
-                duration: msg.duration,
-                repeat: Infinity,
-                delay: msg.delay,
-                ease: 'easeInOut',
-              },
-              x: {
-                duration: msg.duration * 0.8,
-                repeat: Infinity,
-                delay: msg.delay,
-                ease: 'easeInOut',
-              },
             }}
+            drag
+            dragElastic={0}
+            dragMomentum={false}
           >
             <motion.div
               className="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-pastel-pink/30"
