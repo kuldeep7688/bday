@@ -1,14 +1,17 @@
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-interface Heart {
+const FLOWERS = ['🌸', '🌺', '🌷', '🌹', '💐']
+
+interface TrailItem {
   id: number
   x: number
   y: number
+  flower: string
 }
 
 export default function HeartTrail() {
-  const [hearts, setHearts] = useState<Heart[]>([])
+  const [items, setItems] = useState<TrailItem[]>([])
   const [lastSpawn, setLastSpawn] = useState(0)
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
@@ -16,9 +19,9 @@ export default function HeartTrail() {
     if (now - lastSpawn < 100) return
 
     setLastSpawn(now)
-    setHearts((prev) => [
+    setItems((prev) => [
       ...prev.slice(-15),
-      { id: now, x: e.clientX, y: e.clientY },
+      { id: now, x: e.clientX, y: e.clientY, flower: FLOWERS[Math.floor(Math.random() * FLOWERS.length)] },
     ])
   }, [lastSpawn])
 
@@ -29,39 +32,39 @@ export default function HeartTrail() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setHearts((prev) => prev.filter((h) => Date.now() - h.id < 2000))
+      setItems((prev) => prev.filter((h) => Date.now() - h.id < 2000))
     }, 500)
     return () => clearInterval(interval)
   }, [])
 
   return (
     <AnimatePresence>
-      {hearts.map((heart) => (
+      {items.map((item) => (
         <motion.div
-          key={heart.id}
+          key={item.id}
           className="fixed pointer-events-none z-50"
-          style={{ left: heart.x, top: heart.y }}
-          initial={{ opacity: 0.8, scale: 0.5, y: 0 }}
+          style={{ left: item.x, top: item.y }}
+          initial={{ opacity: 0.8, scale: 0.5, y: 0, rotate: 0 }}
           animate={{
             opacity: 0,
             scale: [0.5, 1.2, 0.8],
             y: [0, -40, -80],
+            rotate: [0, Math.random() * 40 - 20],
           }}
           transition={{
             duration: 2,
             ease: 'easeOut',
           }}
           onAnimationComplete={() => {
-            setHearts((prev) => prev.filter((h) => h.id !== heart.id))
+            setItems((prev) => prev.filter((h) => h.id !== item.id))
           }}
         >
           <span
-            className="text-pastel-pink"
             style={{
-              fontSize: `${8 + Math.random() * 8}px`,
+              fontSize: `${12 + Math.random() * 10}px`,
             }}
           >
-            ♥
+            {item.flower}
           </span>
         </motion.div>
       ))}

@@ -99,7 +99,7 @@ export default function ScratchCard({ width = 180, height = 100, onReveal, autoS
     }
   }
 
-  const getCoordinates = (e: React.MouseEvent | React.TouchEvent) => {
+  const getCoordinates = (e: React.PointerEvent) => {
     const canvas = canvasRef.current
     if (!canvas) return null
 
@@ -107,31 +107,31 @@ export default function ScratchCard({ width = 180, height = 100, onReveal, autoS
     const scaleX = canvas.width / rect.width
     const scaleY = canvas.height / rect.height
 
-    if ('touches' in e) {
-      return {
-        x: (e.touches[0].clientX - rect.left) * scaleX,
-        y: (e.touches[0].clientY - rect.top) * scaleY,
-      }
-    } else {
-      return {
-        x: (e.clientX - rect.left) * scaleX,
-        y: (e.clientY - rect.top) * scaleY,
-      }
+    return {
+      x: (e.clientX - rect.left) * scaleX,
+      y: (e.clientY - rect.top) * scaleY,
     }
   }
 
-  const handleStart = (e: React.MouseEvent | React.TouchEvent) => {
+  const handlePointerDown = (e: React.PointerEvent) => {
     if (!isSelected) return
-    e.preventDefault()
+    e.stopPropagation()
+    e.currentTarget.setPointerCapture(e.pointerId)
     const coords = getCoordinates(e)
     if (coords) scratch(coords.x, coords.y)
   }
 
-  const handleMove = (e: React.MouseEvent | React.TouchEvent) => {
+  const handlePointerMove = (e: React.PointerEvent) => {
     if (!isSelected) return
-    e.preventDefault()
+    if (e.buttons === 0) return
+    e.stopPropagation()
     const coords = getCoordinates(e)
     if (coords) scratch(coords.x, coords.y)
+  }
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    e.stopPropagation()
+    e.currentTarget.releasePointerCapture(e.pointerId)
   }
 
   return (
@@ -156,12 +156,11 @@ export default function ScratchCard({ width = 180, height = 100, onReveal, autoS
             ref={canvasRef}
             width={width * 2}
             height={height * 2}
-            className="w-full h-full rounded-xl"
+            className="w-full h-full rounded-xl touch-none"
             style={{ cursor: isSelected ? 'crosshair' : 'pointer' }}
-            onMouseDown={handleStart}
-            onMouseMove={handleMove}
-            onTouchStart={handleStart}
-            onTouchMove={handleMove}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
           />
           {isSelected && (
             <motion.div
