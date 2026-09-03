@@ -13,7 +13,7 @@ import MusicPlayer from './components/MusicPlayer'
 import FloatingScratchCards from './components/FloatingScratchCards'
 import AnimatedDivider from './components/AnimatedDivider'
 import BirthdayCake from './components/BirthdayCake'
-import { songSrc } from './config/content'
+import { youtubeVideoId } from './config/content'
 
 export default function App() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -81,7 +81,7 @@ export default function App() {
           </motion.main>
         )}
       </AnimatePresence>
-      {isUnlocked && <MusicPlayer src={songSrc} />}
+      {isUnlocked && <MusicPlayer videoId={youtubeVideoId} />}
     </>
   )
 }
